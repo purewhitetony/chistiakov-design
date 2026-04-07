@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton's Chistiakov — Web Studio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&amp;family=Google+Sans+Display:wght@400;500;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style id="gl-design-system-variables">
+        :root {
+            --glfw-base: #0d0d0f;
+            --glfw-contrast: #ffffff;
+            --glfw-accent: #4d8df5;
+            --glfw-accent-hover: #6ea3ff;
+            --glfw-accent-soft: rgba(77, 141, 245, 0.15);
+            --glfw-accent-text: #4d8df5;
+            --glfw-accent-text-hover: #6ea3ff;
+            --glfw-accent-secondary: #a78bfa;
+            --glfw-accent-secondary-hover: #c4b5fd;
+            --glfw-accent-secondary-soft: rgba(167, 139, 250, 0.12);
+            --glfw-accent-secondary-text: #a78bfa;
+            --glfw-accent-secondary-text-hover: #c4b5fd;
+            --glfw-bg: #0d0d0f;
+            --glfw-bg-alt: #101012;
+            --glfw-surface: #1a1a1e;
+            --glfw-surface-subtle: #141416;
+            --glfw-surface-elevated: #222226;
+            --glfw-border: rgba(255, 255, 255, 0.06);
+            --glfw-border-mid: rgba(255, 255, 255, 0.1);
+            --glfw-border-strong: rgba(255, 255, 255, 0.16);
+            --glfw-text: #ffffff;
+            --glfw-text-secondary: #e8eaed;
+            --glfw-text-body: #bdc1c6;
+            --glfw-text-muted: #9aa0a6;
+            --glfw-text-subtle: #5f6368;
+            --glfw-text-faint: #3c4043;
+            --glfw-primary-font: 'Inter', 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --glfw-secondary-font: 'Google Sans Display', 'Inter', sans-serif;
+            --glfw-transition-easing: cubic-bezier(0.2, 0, 0, 1);
+            --glfw-btn: #ffffff;
+            --glfw-btn-hover: #e8eaed;
+            --glfw-btn-soft: rgba(255, 255, 255, 0.08);
+            --glfw-btn-text: #0d0d0f;
+            --glfw-btn-text-hover: #0d0d0f;
+            --glfw--spacing--side: min(5vw, 48px);
+            --glfw--style--global--wide-size: 1280px;
+        }
+    </style>
+    <style id="gl-layout-2-1-1-1">
+        .gl-1> :nth-child(3n+1) {
+            width: calc(33.33% - 9.33333px);
+        }
+
+        .gl-1> :nth-child(3n+2) {
+            width: calc(33.33% - 9.33333px);
+        }
+
+        .gl-1> :nth-child(3n+3) {
+            width: calc(33.34% - 9.33333px);
+        }
+
+        @media (max-width: 768px) {
+            .gl-1> :nth-child(3n+1) {
+                width: 33.33%;
+            }
+
+            .gl-1> :nth-child(3n+2) {
+                width: 33.33%;
+            }
+
+            .gl-1> :nth-child(3n+3) {
+                width: 33.34%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gl-1> :nth-child(3n+1) {
+                width: 100%;
+            }
+
+            .gl-1> :nth-child(3n+2) {
+                width: 100%;
+            }
+
+            .gl-1> :nth-child(3n+3) {
+                width: 100%;
+            }
+        }
+    </style>
+    <style id="gl-editor-styles">
+        .gl-1 {
+            flex-direction: row;
+            justify-content: flex-end;
+            position: static;
+        }
+    </style>
+    <style id="gl-layout-2-2-0-1-1">
+        .gl-1> :nth-child(4n+1) {
+            width: calc(27.08% - 7.5px);
+        }
+
+        .gl-1> :nth-child(4n+2) {
+            width: calc(18.34% - 7.5px);
+        }
+
+        .gl-1> :nth-child(4n+3) {
+            width: calc(27.08% - 7.5px);
+        }
+
+        .gl-1> :nth-child(4n+4) {
+            width: calc(27.5% - 7.5px);
+        }
+
+        @media (max-width: 768px) {
+            .gl-1> :nth-child(4n+1) {
+                width: 50%;
+            }
+
+            .gl-1> :nth-child(4n+2) {
+                width: 50%;
+            }
+
+            .gl-1> :nth-child(4n+3) {
+                width: 50%;
+            }
+
+            .gl-1> :nth-child(4n+4) {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gl-1> :nth-child(4n+1) {
+                width: 100%;
+            }
+
+            .gl-1> :nth-child(4n+2) {
+                width: 100%;
+            }
+
+            .gl-1> :nth-child(4n+3) {
+                width: 100%;
+            }
+
+            .gl-1> :nth-child(4n+4) {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SVG Displacement Map — Refraction Glass (shared) -->
+    <svg style="position:absolute;width:0;height:0;" xmlns="http://www.w3.org/2000/svg">
+        <filter id="glass-displacement" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.008" numOctaves="2" seed="3" result="noise">
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+        </filter>
+    </svg>
+
+    <!-- Stitch Effect Canvas Styles -->
+    <style id="hero-stitch-styles" data-gl-uid="user-style-0">
+        #hero-canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-foreground {
+            pointer-events: none;
+        }
+
+        .hero-foreground-inner,
+        .hero-foreground-inner *,
+        .hero-scroll,
+        .hero-scroll * {
+            pointer-events: auto;
+        }
+    </style>
+
+    <!-- Header Scroll Reveal Styles -->
+    <style id="header-scroll-styles" data-gl-uid="user-style-1">
+        .glfw-header.glfw-section {
+            border-bottom-color: transparent;
+            pointer-events: none;
+            transition: border-bottom-color 0.45s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .glfw-header.glfw-section.glfw-header-visible {
+            border-bottom-color: var(--glfw-border);
+            pointer-events: auto;
+        }
+
+        .glfw-header.glfw-section::before {
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .glfw-header.glfw-section.glfw-header-visible::before {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .glfw-nav-container {
+            transform: translateY(-30px);
+            opacity: 0;
+            transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
+            will-change: transform, opacity;
+        }
+
+        .glfw-nav-container.glfw-nav-visible {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    </style>
+
+    <!-- ══════════════════════════════════════════
+         HEADER — Full-Width Dark Navigation Bar
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section alignfull glfw-header glfw-header-visible" data-type="section-component">
+        <div class="glfw-content-wrap" data-type="content-area-component">
+            <div class="glfw-nav-container glfw-nav-visible">
+                <nav class="glfw-nav-pill">
+                    <a class="glfw-nav-brand" href="#">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#4d8df5"></path>
+                            <path d="M2 17l10 5 10-5" stroke="#4d8df5" stroke-width="2" fill="none"></path>
+                            <path d="M2 12l10 5 10-5" stroke="#4d8df5" stroke-width="2" fill="none" opacity="0.5">
+                            </path>
+                        </svg>
+                        Google DeepMind
+                        <span class="glfw-nav-brand-divider">›</span>
+                    </a>
+
+                    <ul class="glfw-nav-links">
+                        <li><a class="glfw-nav-link" href="#">Models</a></li>
+                        <li><a class="glfw-nav-link" href="#">Research</a></li>
+                        <li><a class="glfw-nav-link" href="#">Science</a></li>
+                        <li><a class="glfw-nav-link" href="#">About</a></li>
+                    </ul>
+
+                    <div class="glfw-nav-actions">
+
+                        <button class="glfw-btn-outline glfw-btn-accent-outline">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path
+                                    d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61z">
+                                </path>
+                            </svg>
+                            Написать Антону</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 1: HERO SECTION (header.html)
+         ══════════════════════════════════════════ -->
+    <section class="hero-viewport">
+
+        <!-- Background Video -->
+        <div class="hero-bg">
+            <video autoplay="" muted="" loop="" playsinline="">
+                <source src="https://media.chisto-studio.ru/videos/20260210_background.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Stitch Effect Canvas (overlay on video, under content) -->
+        <canvas id="hero-canvas" aria-hidden="true" width="1250" height="779"
+            style="width: 1250px; height: 779px;"></canvas>
+
+        <!-- Foreground Content -->
+        <div class="hero-foreground">
+            <div class="hero-foreground-inner">
+
+                <!-- ── Nav Row: Counter + Next Project ── -->
+
+
+                <!-- ── Middle: Title (left) + Specs (right) ── -->
+                <div class="hero-middle">
+                    <div class="hero-middle-inner"
+                        style="display:flex;align-items:center;gap:8px;letter-spacing:2px;font-weight:500;color:var(--glfw-text);">
+
+                        <!-- Left Column -->
+                        <div class="hero-left">
+                            <h1 class="glfw-title">ANTON CHISTIAKOV// WEB:DESIGNER</h1>
+                            <p class="glfw-subtitle" style="color: var(--glfw-text-secondary); letter-spacing: 0px;">Я —
+                                независимый
+                                дизайнер с 20-летним опытом. Использую AI-пайплайн для
+                                генерации премиальной графики, чтобы вы получили продукт студийного уровня без переплат
+                                за
+                                штат сотрудников и менеджеров<!-- notionvc: dea69878-a38d-41fb-becd-089c1442d742 --></p>
+                            <div class="hero-icon-row">
+                                <button class="hero-icon-circle" aria-label="Layout">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                                        <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                                        <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                                        <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                                    </svg>
+                                </button>
+                                <button class="hero-icon-circle" aria-label="Preview">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                                <button class="hero-icon-circle" aria-label="Quick Action">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Technical Specs -->
+                        <div class="hero-right">
+                            <div class="specs-heading" style="text-align: right; text-transform: uppercase;">Мои навыки
+                            </div>
+                            <div>
+                                <div class="specs-row">
+                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Focus</span>
+                                    <span class="specs-val" style="text-transform: uppercase;">Visual Systems</span>
+                                </div>
+                                <div class="specs-row">
+                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Logic</span>
+                                    <span class="specs-val" style="text-transform: uppercase;">Creative Strategy</span>
+                                </div>
+                                <div class="specs-row">
+                                    <span class="specs-key"
+                                        style="color: var(--glfw-text-secondary); text-transform: uppercase;">Motion</span>
+                                    <span class="specs-val" style="text-transform: uppercase;">Interactive Design</span>
+                                </div>
+                                <div class="specs-row">
+                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Build</span>
+                                    <span class="specs-val" style="text-transform: uppercase;">Full-Stack Product</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ── Bottom Bar ── -->
+                <div class="hero-bottom">
+
+                    <!-- Bottom-left: Case Study Card with glass dispersion effect -->
+                    <div class="hero-bottom-left glfw-glass">
+                        <div class="glfw-card-body">
+                            <h3 class="glfw-card-title">AC-01: Portfolio Core</h3>
+                            <p class="glfw-card-text">
+                                High-resolution optics and a light frame for comfort and clarity.
+                                Optimized for modern web standards.
+                            </p><a class="glfw-card-arrow" href="#"
+                                style="border-color: var(--glfw-accent-hover); opacity: 1; mix-blend-mode: normal;">
+                                View Case Study
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Bottom-center: Scroll Indicator -->
+
+
+                    <!-- Bottom-right: Tag Pills -->
+                    <div class="hero-tags gl-1" style="height: 51px;">
+
+                        <span class="glfw-btn-outline"
+                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">UI/UX</span><span
+                            class="glfw-btn-outline"
+                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">A+</span>
+                        <span class="glfw-btn-outline"
+                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">бренд</span>
+                        <span class="glfw-btn-outline"
+                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">веб</span>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-scroll">
+                    <div class="hero-scroll-mouse">
+                        <div class="hero-scroll-dot"></div>
+                    </div>
+                    <span class="hero-scroll-label">Scroll</span>
+                </div>
+
+            </div><!-- /.hero-foreground-inner -->
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 2: BRANDS SECTION
+         ══════════════════════════════════════════ -->
+
+    <!-- Brands counter badge (fixed, global) -->
+    <div class="brands-counter" id="brands-counter">16 / 16</div>
+
+    <!-- Fixed image thumbnail (outside scroll flow, positioned by JS) -->
+    <div class="image-thumbnail-wrapper" id="thumb-wrapper" style="transform: translate(-50%, calc(-50% - 934.8px));">
+        <img src="assets/img/brands/5.jpg" alt="Brand Image" class="image-thumbnail" id="thumb-img" style="opacity: 0;">
+    </div>
+
+    <div class="glfw-section">
+        <!-- Top spacer for scroll distance -->
+        <div class="brands-spacer" style="height: 25svh;"></div>
+
+        <!-- Dual Wave Animation Section -->
+        <div class="dual-wave-wrapper" id="dual-wave" data-animation="dual-wave" data-wave-number="12"
+            data-wave-speed="1">
+
+            <!-- Left column: Project/Product names + image references -->
+            <div class="wave-column wave-column-left">
+                <div class="animated-text" data-image="assets/img/brands/1.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Volt R2</div>
+                <div class="animated-text" data-image="assets/img/brands/2.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(3.9817px, 0px);">Éclat</div>
+                <div class="animated-text" data-image="assets/img/brands/3.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(14.6834px, 0px);">Project
+                    Ion</div>
+                <div class="animated-text" data-image="assets/img/brands/4.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(28.7631px, 0px);">AeroLine
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/5.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(41.8237px, 0px);">Série Noir
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/6.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(49.7865px, 0px);">UltraRun
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/7.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(50.1649px, 0px);">Atelier 03
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/8.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(42.8406px, 0px);">Pulse One
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/9.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(30.101px, 0px);">Linea 24
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/10.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(15.9245px, 0px);">Echo
+                    Series</div>
+                <div class="animated-text" data-image="assets/img/brands/11.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(4.7384px, 0px);">Zero</div>
+                <div class="animated-text" data-image="assets/img/brands/1.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0.036px, 0px);">Shift/Black
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/2.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(3.2857px, 0px);">Solar Drift
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/3.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(13.4729px, 0px);">Nº 27
+                </div>
+                <div class="animated-text" data-image="assets/img/brands/4.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(27.416px, 0px);">Mode/3
+                </div>
+                <div class="animated-text focused" data-image="assets/img/brands/5.jpg"
+                    style="translate: none; rotate: none; scale: none; transform: translate(40.7607px, 0px);">Pure Form
+                </div>
+            </div>
+
+            <!-- Right column: Brand names -->
+            <div class="wave-column wave-column-right">
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Tesla</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Chanel</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Apple</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">BMW</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Saint Laurent
+                </div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Nike</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Hermès</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Adidas</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Prada</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Google</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Polestar</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Balenciaga</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Audi</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Valentino</div>
+                <div class="animated-text"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Samsung</div>
+                <div class="animated-text focused"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Bottega Veneta
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom spacer -->
+        <div class="brands-spacer-bottom" style="height: 25svh;"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 3: REVIEWS SECTION (reviews.html)
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section glfw-cards-area">
+        <div class="glfw-content-wrap">
+            <header class="glfw-section-header">
+                <span class="glfw-section-label">Our Testimonials</span>
+                <h2 class="glfw-section-title">Customer experiences that speak for themselves</h2>
+            </header>
+
+            <div class="glfw-cards-grid">
+
+                <!-- Card 1 -->
+                <div class="glfw-card">
+                    <div class="glfw-card-body">
+                        <div class="glfw-review-author">
+                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=11"
+                                alt="Jonathan Keller">
+                            <div class="glfw-review-meta">
+                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
+                                    <svg viewBox="0 0 24 24" style="border-color: var(--glfw-accent-secondary);">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" style="border-color: var(--glfw-accent-secondary);">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                                            style="border-color: var(--glfw-accent-secondary-hover);"></path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="glfw-review-name">By Jonathan Keller</span>
+                            </div>
+                        </div>
+                        <h3 class="glfw-card-title">"Good sales growth"</h3>
+                        <p class="glfw-card-text">"This tool transformed how our team works! Tasks are organized,
+                            deadlines are clear, and collaboration is smoother than ever. Productivity has never been
+                            this high."</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glfw-card">
+                    <div class="glfw-card-body">
+                        <div class="glfw-review-author">
+                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=5" alt="Rebecca Lin">
+                            <div class="glfw-review-meta">
+                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="glfw-review-name">By Rebecca Lin</span>
+                            </div>
+                        </div>
+                        <h3 class="glfw-card-title">"Faster support"</h3>
+                        <p class="glfw-card-text">"An absolute game-changer for project management. We can track
+                            progress in real-time, avoid delays, and deliver projects on schedule with less stress."</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glfw-card">
+                    <div class="glfw-card-body">
+                        <div class="glfw-review-author">
+                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=12" alt="Mark Wilson">
+                            <div class="glfw-review-meta">
+                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="glfw-review-name">By Mark Wilson</span>
+                            </div>
+                        </div>
+                        <h3 class="glfw-card-title">"Smooth workflow"</h3>
+                        <p class="glfw-card-text">"Simple, intuitive, and powerful—our team now manages tasks without
+                            confusion. It keeps everyone aligned and helps us achieve more in less time."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 4: BLOG SECTION
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section glfw-blog-area">
+        <div class="glfw-content-wrap">
+            <header class="glfw-section-header">
+                <span class="glfw-section-label">Blog</span>
+                <h2 class="glfw-section-title">Latest articles &amp; insights</h2>
+            </header>
+
+            <div class="blog-grid">
+                <!-- Card 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-image bg-dots">
+                        <span class="blog-card-img-text">Gemini 3.1 Pro</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Gemini 3.1 Pro in Google Antigravity</h3>
+                        <p class="blog-card-meta">Feb 19, 2026 • Product</p>
+                        <a href="#" class="blog-card-link">Read blog <span class="blog-arrow">›</span></a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-image bg-dots">
+                        <span class="blog-card-img-text blog-flash-text">✦ Gemini <span class="blog-thin">3 Flash</span></span>
+                    </div>
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Gemini 3 Flash in Google Antigravity</h3>
+                        <p class="blog-card-meta">Dec 17, 2025 • Product</p>
+                        <a href="#" class="blog-card-link">Read blog <span class="blog-arrow">›</span></a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <div class="blog-emoji-icon">🍌</div>
+                    </div>
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Nano Banana Pro in Google Antigravity</h3>
+                        <p class="blog-card-meta">Nov 20, 2025 • Product</p>
+                        <a href="#" class="blog-card-link">Read blog <span class="blog-arrow">›</span></a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <div class="blog-liftoff-badge">Experience liftoff <span class="blog-liftoff-arrows">‹ ›</span></div>
+                    </div>
+                    <div class="blog-card-body">
+                        <h3 class="blog-card-title">Introducing Google Antigravity</h3>
+                        <p class="blog-card-meta">Nov 18, 2025 • Product</p>
+                        <a href="#" class="blog-card-link">Read blog <span class="blog-arrow">›</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         HEADER SCROLL REVEAL — Show nav at 50% hero
+         ══════════════════════════════════════════ -->
+    <script>
+        (function () {
+            'use strict';
+            var header = document.querySelector('.glfw-header.glfw-section');
+            var navContainer = document.querySelector('.glfw-nav-container');
+            var heroSection = document.querySelector('.hero-viewport');
+            if (!header || !navContainer || !heroSection) return;
+
+            var hasRevealed = false;
+            var staggerTimer = null;
+
+            function onScroll() {
+                var heroHeight = heroSection.getBoundingClientRect().height;
+                var scrollY = window.scrollY || window.pageYOffset;
+                var threshold = heroHeight * 0.5;
+
+                if (scrollY >= threshold && !hasRevealed) {
+                    // Show: header background first, then nav text after 500ms
+                    header.classList.add('glfw-header-visible');
+                    staggerTimer = setTimeout(function () {
+                        navContainer.classList.add('glfw-nav-visible');
+                    }, 500);
+                    hasRevealed = true;
+                } else if (scrollY < threshold && hasRevealed) {
+                    // Hide: nav text first, then header background after 500ms
+                    if (staggerTimer) { clearTimeout(staggerTimer); staggerTimer = null; }
+                    navContainer.classList.remove('glfw-nav-visible');
+                    staggerTimer = setTimeout(function () {
+                        header.classList.remove('glfw-header-visible');
+                        staggerTimer = null;
+                    }, 500);
+                    hasRevealed = false;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+
+    <!-- ══════════════════════════════════════════
+         STITCH EFFECT — Hero Canvas Animation
+         ══════════════════════════════════════════ -->
+    <script>
+        (function () {
+            'use strict';
+
+            // === НАСТРОЙКИ ЭФФЕКТА ===
+            const GRID_SPACING = 16;
+            const DOT_RADIUS = 1;
+            const INTERACTION_RADIUS = 725;
+            const DISTORTION_STRENGTH = 28;
+            const LERP_FACTOR = 0.035;
+            const NOISE_STRENGTH = 6;
+            const NOISE_SCALE = 0.04;
+            const NOISE_SPEED = 0.0008;
+            const COLOR_BASE = [68, 68, 68];
+            const COLOR_ACCENT_1 = [96, 86, 240];
+            const COLOR_ACCENT_2 = [64, 217, 198];
+
+            let particles = [];
+            let mouse = { x: -1000, y: -1000, isActive: false };
+            let canvasWidth = 0;
+            let canvasHeight = 0;
+            let animationFrameId;
+
+            // Perlin Noise
+            const permutation = new Uint8Array(512);
+            const p = new Uint8Array(256);
+            for (let i = 0; i < 256; i++) p[i] = i;
+            for (let i = 255; i > 0; i--) {
+                let n = (i * 2654435761 >>> 0) % (i + 1);
+                let r = p[i]; p[i] = p[n]; p[n] = r;
+            }
+            for (let i = 0; i < 512; i++) permutation[i] = p[i & 255];
+
+            const gradVectors = [[1, 1], [-1, 1], [1, -1], [-1, -1], [1, 0], [-1, 0], [0, 1], [0, -1]];
+            function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+            function lerp(a, b, t) { return a + t * (b - a); }
+            function grad(hash, x, y) {
+                const v = gradVectors[hash & 7];
+                return v[0] * x + v[1] * y;
+            }
+            function noise2D(x, y) {
+                let X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
+                x -= Math.floor(x); y -= Math.floor(y);
+                let u = fade(x), v = fade(y);
+                let a = permutation[X] + Y, aa = permutation[a], ab = permutation[a + 1];
+                let b = permutation[X + 1] + Y, ba = permutation[b], bb = permutation[b + 1];
+                return lerp(
+                    lerp(grad(permutation[aa], x, y), grad(permutation[ba], x - 1, y), u),
+                    lerp(grad(permutation[ab], x, y - 1), grad(permutation[bb], x - 1, y - 1), u),
+                    v
+                );
+            }
+
+            function initGrid() {
+                particles = [];
+                const cols = Math.ceil(canvasWidth / GRID_SPACING) + 1;
+                const rows = Math.ceil(canvasHeight / GRID_SPACING) + 1;
+                for (let row = 0; row < rows; row++) {
+                    for (let col = 0; col < cols; col++) {
+                        let x = col * GRID_SPACING, y = row * GRID_SPACING;
+                        particles.push({ gx: x, gy: y, x: x, y: y });
+                    }
+                }
+            }
+
+            function resize() {
+                const canvas = document.getElementById('hero-canvas');
+                if (!canvas) return;
+                const parent = canvas.parentElement;
+                const rect = parent.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvasWidth = Math.round(rect.width);
+                canvasHeight = Math.round(rect.height);
+                canvas.width = canvasWidth * dpr;
+                canvas.height = canvasHeight * dpr;
+                canvas.style.width = canvasWidth + 'px';
+                canvas.style.height = canvasHeight + 'px';
+                canvas.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
+                initGrid();
+            }
+
+            function render() {
+                const canvas = document.getElementById('hero-canvas');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                const interactionRadiusSq = INTERACTION_RADIUS * INTERACTION_RADIUS;
+                const time = performance.now() * NOISE_SPEED;
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+                    let targetX = p.gx, targetY = p.gy, influence = 0;
+
+                    if (mouse.isActive) {
+                        let dx = p.gx - mouse.x, dy = p.gy - mouse.y;
+                        let distSq = dx * dx + dy * dy;
+                        if (distSq < interactionRadiusSq && distSq > 0) {
+                            let dist = Math.sqrt(distSq);
+                            influence = 1 - (dist / INTERACTION_RADIUS);
+                            let force = influence * influence * influence * DISTORTION_STRENGTH;
+                            targetX = p.gx + (dx / dist) * force;
+                            targetY = p.gy + (dy / dist) * force;
+                            let noiseX = noise2D(p.gx * NOISE_SCALE, p.gy * NOISE_SCALE + time);
+                            let noiseY = noise2D(p.gx * NOISE_SCALE + 100, p.gy * NOISE_SCALE + time);
+                            let noiseForce = influence * influence * NOISE_STRENGTH;
+                            targetX += noiseX * noiseForce;
+                            targetY += noiseY * noiseForce;
+                        }
+                    }
+
+                    p.x += (targetX - p.x) * LERP_FACTOR;
+                    p.y += (targetY - p.y) * LERP_FACTOR;
+
+                    let r = COLOR_BASE[0], g = COLOR_BASE[1], b = COLOR_BASE[2], alpha = 1;
+                    let fadeStart = canvasHeight * 0.75;
+                    if (p.gy > fadeStart) {
+                        alpha *= 1 - (p.gy - fadeStart) / (canvasHeight - fadeStart);
+                    }
+
+                    if (mouse.isActive && influence > 0) {
+                        alpha *= 1 - (influence * influence * 0.85);
+                        let angle = Math.atan2(p.gy - mouse.y, p.gx - mouse.x);
+                        let colorMix = (Math.sin(angle * 2 + time * 3) + 1) * 0.5;
+                        let targetR = lerp(COLOR_ACCENT_1[0], COLOR_ACCENT_2[0], colorMix);
+                        let targetG = lerp(COLOR_ACCENT_1[1], COLOR_ACCENT_2[1], colorMix);
+                        let targetB = lerp(COLOR_ACCENT_1[2], COLOR_ACCENT_2[2], colorMix);
+                        let colorInfluence = influence * influence;
+                        r = Math.round(lerp(COLOR_BASE[0], targetR, colorInfluence));
+                        g = Math.round(lerp(COLOR_BASE[1], targetG, colorInfluence));
+                        b = Math.round(lerp(COLOR_BASE[2], targetB, colorInfluence));
+                    }
+
+                    ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                animationFrameId = requestAnimationFrame(render);
+            }
+
+            // Init
+            function init() {
+                const canvas = document.getElementById('hero-canvas');
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+
+                window.addEventListener('resize', resize);
+
+                canvas.parentElement.addEventListener('mousemove', function (e) {
+                    const rect = canvas.parentElement.getBoundingClientRect();
+                    mouse.x = e.clientX - rect.left;
+                    mouse.y = e.clientY - rect.top;
+                    mouse.isActive = true;
+                });
+
+                canvas.parentElement.addEventListener('mouseleave', function () {
+                    mouse.isActive = false;
+                });
+
+                resize();
+                render();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+
+    <!-- GSAP for Brands Section -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        // ============================================
+        // BRANDS: DUAL WAVE ANIMATION
+        // ============================================
+        (function () {
+            'use strict';
+
+            class DualWaveAnimation {
+                constructor(wrapper, options = {}) {
+                    this.wrapper = wrapper instanceof Element
+                        ? wrapper
+                        : document.querySelector(wrapper);
+
+                    const waveNumber = this.wrapper?.dataset.waveNumber
+                        ? parseFloat(this.wrapper.dataset.waveNumber) : 2;
+                    const waveSpeed = this.wrapper?.dataset.waveSpeed
+                        ? parseFloat(this.wrapper.dataset.waveSpeed) : 1;
+
+                    this.config = { waveNumber, waveSpeed, ...options };
+                    this.currentImage = null;
+                }
+
+                init() {
+                    if (!this.wrapper) return;
+                    this.leftColumn = this.wrapper.querySelector('.wave-column-left');
+                    this.rightColumn = this.wrapper.querySelector('.wave-column-right');
+                    if (!this.leftColumn || !this.rightColumn) return;
+                    this.setupAnimation();
+                }
+
+                setupAnimation() {
+                    this.leftTexts = gsap.utils.toArray(this.leftColumn.querySelectorAll('.animated-text'));
+                    this.rightTexts = gsap.utils.toArray(this.rightColumn.querySelectorAll('.animated-text'));
+                    this.thumbnail = document.getElementById('thumb-img');
+
+                    if (this.leftTexts.length === 0 || this.rightTexts.length === 0) return;
+
+                    this.leftQuickSetters = this.leftTexts.map(text =>
+                        gsap.quickTo(text, 'x', { duration: 0.6, ease: 'power4.out' })
+                    );
+                    this.rightQuickSetters = this.rightTexts.map(text =>
+                        gsap.quickTo(text, 'x', { duration: 0.6, ease: 'power4.out' })
+                    );
+
+                    this.calculateRanges();
+                    this.setInitialPositions(this.leftTexts, this.leftRange, 1);
+                    this.setInitialPositions(this.rightTexts, this.rightRange, -1);
+                    this.setupScrollTrigger();
+
+                    this.resizeHandler = () => this.calculateRanges();
+                    window.addEventListener('resize', this.resizeHandler);
+                }
+
+                calculateRanges() {
+                    const maxLeft = Math.max(...this.leftTexts.map(t => t.offsetWidth));
+                    const maxRight = Math.max(...this.rightTexts.map(t => t.offsetWidth));
+                    this.leftRange = { minX: 0, maxX: this.leftColumn.offsetWidth - maxLeft };
+                    this.rightRange = { minX: 0, maxX: this.rightColumn.offsetWidth - maxRight };
+                }
+
+                setInitialPositions(texts, range, multiplier) {
+                    const rangeSize = range.maxX - range.minX;
+                    texts.forEach((text, index) => {
+                        const phase = this.config.waveNumber * index - Math.PI / 2;
+                        const wave = Math.sin(phase);
+                        const progress = (wave + 1) / 2;
+                        gsap.set(text, { x: (range.minX + progress * rangeSize) * multiplier });
+                    });
+                }
+
+                setupScrollTrigger() {
+                    this.scrollTrigger = ScrollTrigger.create({
+                        trigger: this.wrapper,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        onUpdate: (self) => this.handleScroll(self),
+                    });
+                }
+
+                handleScroll(self) {
+                    const progress = self.progress;
+                    const closestIndex = this.findClosestToViewportCenter();
+
+                    this.updateColumn(this.leftTexts, this.leftQuickSetters, this.leftRange, progress, closestIndex, 1);
+                    this.updateColumn(this.rightTexts, this.rightQuickSetters, this.rightRange, progress, closestIndex, -1);
+
+                    const focusedText = this.leftTexts[closestIndex];
+                    this.updateThumbnailImage(focusedText);
+                    this.updateCounter(closestIndex);
+                }
+
+                updateColumn(texts, setters, range, progress, focusedIndex, multiplier) {
+                    const rangeSize = range.maxX - range.minX;
+                    texts.forEach((text, index) => {
+                        const finalX = this.calculateWavePosition(index, progress, range.minX, rangeSize) * multiplier;
+                        setters[index](finalX);
+                        if (index === focusedIndex) {
+                            text.classList.add('focused');
+                        } else {
+                            text.classList.remove('focused');
+                        }
+                    });
+                }
+
+                calculateWavePosition(index, globalProgress, minX, range) {
+                    const phase = this.config.waveNumber * index +
+                        this.config.waveSpeed * globalProgress * Math.PI * 2 - Math.PI / 2;
+                    const wave = Math.sin(phase);
+                    return minX + ((wave + 1) / 2) * range;
+                }
+
+                findClosestToViewportCenter() {
+                    const viewportCenter = window.innerHeight / 2;
+                    let closestIndex = 0;
+                    let closestDistance = Infinity;
+                    this.leftTexts.forEach((text, index) => {
+                        const rect = text.getBoundingClientRect();
+                        const textCenter = rect.top + rect.height / 2;
+                        const distance = Math.abs(textCenter - viewportCenter);
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestIndex = index;
+                        }
+                    });
+                    return closestIndex;
+                }
+
+                updateThumbnailImage(focusedText) {
+                    if (!focusedText || !this.thumbnail) return;
+                    const imageUrl = focusedText.dataset.image;
+                    if (!imageUrl || imageUrl === this.currentImage) return;
+                    this.currentImage = imageUrl;
+                    this.thumbnail.src = imageUrl;
+                }
+
+                updateCounter(closestIndex) {
+                    const counter = document.getElementById('brands-counter');
+                    if (!counter) return;
+                    const total = this.leftTexts.length;
+                    const current = String(closestIndex + 1).padStart(2, '0');
+                    const totalStr = String(total).padStart(2, '0');
+                    counter.textContent = `${current} / ${totalStr}`;
+                }
+
+                destroy() {
+                    if (this.scrollTrigger) this.scrollTrigger.kill();
+                    if (this.resizeHandler) window.removeEventListener('resize', this.resizeHandler);
+                }
+            }
+
+            // ============================================
+            // INIT
+            // ============================================
+            function initBrands() {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Preload images
+                const imageUrls = [];
+                document.querySelectorAll('#dual-wave .animated-text[data-image]').forEach(el => {
+                    const src = el.dataset.image;
+                    if (src && !imageUrls.includes(src)) imageUrls.push(src);
+                });
+
+                let loadedCount = 0;
+                const totalImages = imageUrls.length;
+
+                function onAllLoaded() {
+                    const animation = new DualWaveAnimation('#dual-wave');
+                    animation.init();
+
+                    // IMAGE PHASE SYSTEM
+                    const thumbWrapper = document.getElementById('thumb-wrapper');
+                    const thumbImg = document.getElementById('thumb-img');
+                    const waveEl = document.getElementById('dual-wave');
+
+                    const thumbProxy = { ty: window.innerHeight * 1.2 };
+
+                    function applyThumbTransform() {
+                        thumbWrapper.style.transform =
+                            `translate(-50%, calc(-50% + ${thumbProxy.ty}px))`;
+                    }
+                    applyThumbTransform();
+
+                    // Phase 1: Enter
+                    ScrollTrigger.create({
+                        trigger: waveEl,
+                        start: 'top bottom',
+                        end: 'top center',
+                        scrub: 1.2,
+                        onUpdate(self) {
+                            const p = self.progress;
+                            thumbProxy.ty = (1 - p) * window.innerHeight * 1.2;
+                            applyThumbTransform();
+                            thumbImg.style.opacity = Math.min(0.9, p * 2);
+                        }
+                    });
+
+                    // Phase 3: Exit
+                    ScrollTrigger.create({
+                        trigger: waveEl,
+                        start: 'bottom center',
+                        end: 'bottom top',
+                        scrub: 1.2,
+                        onUpdate(self) {
+                            const p = self.progress;
+                            thumbProxy.ty = -p * window.innerHeight * 1.2;
+                            applyThumbTransform();
+                            thumbImg.style.opacity = Math.max(0, 0.9 - p * 1.8);
+                        }
+                    });
+                }
+
+                if (totalImages === 0) {
+                    onAllLoaded();
+                } else {
+                    imageUrls.forEach(url => {
+                        const img = new Image();
+                        img.onload = img.onerror = () => {
+                            loadedCount++;
+                            if (loadedCount >= totalImages) onAllLoaded();
+                        };
+                        img.src = url;
+                    });
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initBrands);
+            } else {
+                initBrands();
+            }
+        })();
+    </script>
+
+
+
+
+</body>
+
+</html>

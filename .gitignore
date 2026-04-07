@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+
+# Unignore the parts of the project explicitly requested
+!index.html
+!assets/
+!assets/**
+
+# Unignore .gitignore itself
+!.gitignore
