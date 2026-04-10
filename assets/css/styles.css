@@ -887,6 +887,7 @@ body {
     font-size: 40px;
     line-height: 1.15;
     font-weight: 400;
+    font-stretch: 150%;
     color: var(--glfw-text);
     margin: 0 0 40px;
     letter-spacing: -0.02em;
@@ -1514,8 +1515,8 @@ body {
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.35s var(--glfw-transition-easing),
-                box-shadow 0.35s var(--glfw-transition-easing),
-                border-color 0.3s ease;
+        box-shadow 0.35s var(--glfw-transition-easing),
+        border-color 0.3s ease;
 }
 
 .blog-card:hover {
