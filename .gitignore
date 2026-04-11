@@ -5,6 +5,8 @@
 !index.html
 !assets/
 !assets/**
+!ref/
+!ref/**
 
 # Unignore .gitignore itself
 !.gitignore
