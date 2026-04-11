@@ -1861,3 +1861,194 @@ body {
     cursor: default;
     justify-content: center;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   REVIEWS SLIDER
+   ═══════════════════════════════════════════════════════════ */
+.reviews-preview-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.slider-bg-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, var(--glfw-accent-soft) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.slider-track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* Транзиция удалена, чтобы не конфликтовать со сглаживанием GSAP scrub */
+    will-change: transform;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .slider-track { gap: 48px; }
+}
+
+/* Base Card Styles */
+.review-card-wrapper {
+    position: relative;
+    width: 320px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.6s var(--glfw-transition-easing);
+
+    /* Inactive States */
+    height: 400px;
+    opacity: 0.4;
+    transform: scale(0.95);
+}
+
+.review-card-wrapper.active {
+    height: 560px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Fix for glfw-glass inside the slider */
+.review-card-wrapper.glfw-glass {
+    border: 1px solid var(--glfw-border-mid);
+}
+.review-card-wrapper.glfw-glass::before {
+    clip-path: inset(30px round 16px);
+}
+
+/* Inner content alignment override */
+.review-card-wrapper .glfw-card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+/* Video Card specific */
+.video-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--glfw-border-mid);
+}
+
+.video-layer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--glfw-bg) 0%, transparent 50%);
+}
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 3;
+}
+
+.review-card-wrapper:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-btn-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--glfw-surface-elevated);
+    border: 1px solid var(--glfw-border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--glfw-text);
+}
+
+.video-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    z-index: 3;
+}
+
+.video-meta-glass {
+    background: var(--glfw-surface-subtle);
+    border: 1px solid var(--glfw-border-mid);
+    padding: 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+}
+
+/* Footer / Progress */
+.reviews-footer {
+    width: 100%;
+    z-index: 10;
+}
+
+.progress-container {
+    height: 2px;
+    width: 100%;
+    background-color: var(--glfw-border-mid);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--glfw-accent);
+    transition: width 0.8s var(--glfw-transition-easing);
+    width: 0%;
+}
+
+.footer-info {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--glfw-text-muted);
+}

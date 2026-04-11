@@ -295,141 +295,47 @@
     </div>
 
     <!-- ══════════════════════════════════════════
-         BLOCK 3: REVIEWS SECTION (reviews.html)
+         BLOCK 3: REVIEWS SECTION
          ══════════════════════════════════════════ -->
-    <section class="glfw-section glfw-cards-area">
+    <section class="reviews-preview-wrapper glfw-section">
         <div class="glfw-content-wrap">
-            <header class="glfw-section-header">
-                <span class="glfw-section-label">Our Testimonials</span>
-                <h2 class="glfw-section-title">Customer experiences that speak for themselves</h2>
+            <!-- Header -->
+            <header class="reviews-header">
+                <h2 class="glfw-title" style="margin: 0; text-transform: uppercase;">Studio Testimonials</h2>
+                <div class="glfw-nav-actions">
+                    <button id="prev-btn" class="glfw-btn-outline glfw-btn-accent-outline" aria-label="Previous">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button id="next-btn" class="glfw-btn-outline glfw-btn-accent-outline" aria-label="Next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
             </header>
+        </div>
 
-            <div class="glfw-cards-grid">
+        <!-- Main Slider Area -->
+        <div class="slider-container">
+            <!-- Градиент на фоне (с использованием существующих цветов) -->
+            <div class="slider-bg-glow"></div>
 
-                <!-- Card 1 -->
-                <div class="glfw-card">
-                    <div class="glfw-card-body">
-                        <div class="glfw-review-author">
-                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=11"
-                                alt="Jonathan Keller">
-                            <div class="glfw-review-meta">
-                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
-                                    <svg viewBox="0 0 24 24" style="border-color: var(--glfw-accent-secondary);">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24" style="border-color: var(--glfw-accent-secondary);">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                                            style="border-color: var(--glfw-accent-secondary-hover);"></path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <span class="glfw-review-name">By Jonathan Keller</span>
-                            </div>
-                        </div>
-                        <h3 class="glfw-card-title">"Good sales growth"</h3>
-                        <p class="glfw-card-text">"This tool transformed how our team works! Tasks are organized,
-                            deadlines are clear, and collaboration is smoother than ever. Productivity has never been
-                            this high."</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glfw-card">
-                    <div class="glfw-card-body">
-                        <div class="glfw-review-author">
-                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=5" alt="Rebecca Lin">
-                            <div class="glfw-review-meta">
-                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <span class="glfw-review-name">By Rebecca Lin</span>
-                            </div>
-                        </div>
-                        <h3 class="glfw-card-title">"Faster support"</h3>
-                        <p class="glfw-card-text">"An absolute game-changer for project management. We can track
-                            progress in real-time, avoid delays, and deliver projects on schedule with less stress."</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glfw-card">
-                    <div class="glfw-card-body">
-                        <div class="glfw-review-author">
-                            <img class="glfw-review-avatar" src="https://i.pravatar.cc/150?img=12" alt="Mark Wilson">
-                            <div class="glfw-review-meta">
-                                <div class="glfw-review-stars" style="color: var(--glfw-accent-secondary);">
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                    <svg viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <span class="glfw-review-name">By Mark Wilson</span>
-                            </div>
-                        </div>
-                        <h3 class="glfw-card-title">"Smooth workflow"</h3>
-                        <p class="glfw-card-text">"Simple, intuitive, and powerful—our team now manages tasks without
-                            confusion. It keeps everyone aligned and helps us achieve more in less time."</p>
-                    </div>
-                </div>
-
+            <div class="slider-track" id="slider-track">
+                <!-- Карточки генерируются через JS -->
             </div>
+        </div>
+
+        <!-- Footer / Progress -->
+        <div class="glfw-content-wrap">
+            <footer class="reviews-footer">
+                <div class="progress-container">
+                    <!-- Полоса прогресса использует переменные акцентного цвета -->
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="footer-info">
+                    <span id="current-slide">01 / 05</span>
+                    <span>Scroll to explore</span>
+                    <span id="total-slides">05 / 05</span>
+                </div>
+            </footer>
         </div>
     </section>
 
@@ -965,6 +871,193 @@
 
 
 
-</body>
+    <!-- ============================================
+         REVIEWS SLIDER ANIMATION (Dynamic Scrubbing Version)
+         ============================================ -->
+    <script>
+        (function () {
+            'use strict';
 
+            document.addEventListener('DOMContentLoaded', () => {
+                const TESTIMONIALS = [
+                    {
+                        id: 1, type: 'text', title: 'TRANSFORMATIVE DESIGN.',
+                        content: '"Working with the studio was a game-changer. Their creative direction completely revitalized our brand identity."',
+                        author: 'John D.', role: 'CEO at Horizon',
+                        avatar: 'https://i.pravatar.cc/150?img=11'
+                    },
+                    {
+                        id: 2, type: 'text', title: 'EXCEPTIONAL DEVELOPMENT.',
+                        content: '"The team\'s technical expertise is unmatched. They delivered a complex platform on time and exceeded our expectations."',
+                        author: 'Sarah L.', role: 'Founder of TechNova',
+                        avatar: 'https://i.pravatar.cc/150?img=5'
+                    },
+                    {
+                        id: 3, type: 'video', title: "ALEXANDRA'S EXPERIENCE",
+                        content: 'Lead Designer, Flora', author: 'Alexandra M.', role: 'Lead Designer',
+                        thumbnail: 'https://picsum.photos/seed/alexandra/800/1200',
+                        videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-woman-working-on-a-tablet-41290-large.mp4',
+                    },
+                    {
+                        id: 4, type: 'video', title: "MAX'S PROJECT",
+                        content: 'Creative Director, ArtHouse', author: 'Max R.', role: 'Creative Director',
+                        thumbnail: 'https://picsum.photos/seed/max/800/1200',
+                        videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-man-explaining-something-on-a-whiteboard-41289-large.mp4',
+                    },
+                    {
+                        id: 5, type: 'text', title: 'INNOVATIVE STRATEGY.',
+                        content: '"Their strategic approach to user experience resulted in a significant increase in user engagement."',
+                        author: 'David K.', role: 'Product Lead at Elevate',
+                        avatar: 'https://i.pravatar.cc/150?img=12'
+                    },
+                ];
+
+                const track = document.getElementById('slider-track');
+                const progressBar = document.getElementById('progress-bar');
+                const currentSlideEl = document.getElementById('current-slide');
+                const totalSlidesEl = document.getElementById('total-slides');
+
+                if (!track || !progressBar) return;
+
+                const formatPad = (num) => num.toString().padStart(2, '0');
+                let st;
+                let currentActiveIndex = 0;
+
+                function renderCards() {
+                    track.innerHTML = '';
+                    TESTIMONIALS.forEach((item, index) => {
+                        const card = document.createElement('div');
+
+                        card.className = `review-card-wrapper ${item.type === 'text' ? 'glfw-glass' : ''}`;
+                        card.dataset.index = index;
+
+                        if (item.type === 'video') {
+                            card.innerHTML = `
+                                <div class="video-layer">
+                                    <video src="${item.videoUrl}" poster="${item.thumbnail}" autoplay muted loop playsinline></video>
+                                    <div class="video-gradient"></div>
+                                </div>
+                                <div class="play-overlay">
+                                    <div class="play-btn-circle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                                    </div>
+                                </div>
+                                <div class="video-meta">
+                                    <div class="video-meta-glass">
+                                        <h3 class="glfw-card-title" style="margin-top:0; margin-bottom: 4px;">${item.title}</h3>
+                                        <p class="glfw-card-text" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">${item.content}</p>
+                                    </div>
+                                </div>
+                            `;
+                        } else {
+                            card.innerHTML = `
+                                <div class="glfw-card-body">
+                                    <div>
+                                        <h3 class="glfw-card-title" style="font-size: 20px; text-transform: uppercase;">${item.title}</h3>
+                                        <p class="glfw-card-text" style="font-style: italic; font-size: 16px;">${item.content}</p>
+                                    </div>
+
+                                    <div class="glfw-review-author" style="margin-top: auto;">
+                                        <img class="glfw-review-avatar" src="${item.avatar}" alt="${item.author}">
+                                        <div class="glfw-review-meta">
+                                            <span class="glfw-review-name">${item.author}</span>
+                                            <span style="font-size: 12px; color: var(--glfw-text-muted);">${item.role}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        // Клик по карточке прокручивает страницу до позиции этой карточки
+                        card.addEventListener('click', () => scrollToSlide(index));
+                        track.appendChild(card);
+                    });
+
+                    totalSlidesEl.textContent = `${formatPad(TESTIMONIALS.length)} / ${formatPad(TESTIMONIALS.length)}`;
+                }
+
+                // Эта функция вызывается каждый кадр при скролле (scrub)
+                function updateTrackPosition(progress) {
+                    // Превращаем прогресс (0..1) в индекс (0..4)
+                    const indexFloat = progress * (TESTIMONIALS.length - 1);
+                    const activeIndex = Math.round(indexFloat);
+                    currentActiveIndex = activeIndex;
+
+                    // Математика динамического смещения
+                    const gap = window.innerWidth >= 768 ? 48 : 24;
+                    const cardWidth = 320;
+                    const offsetPixels = (indexFloat * cardWidth) + (indexFloat * gap) + (cardWidth / 2);
+
+                    // Двигаем трек без задержек (CSS transition удалена)
+                    track.style.transform = `translateX(calc(50% - ${offsetPixels}px))`;
+
+                    // Обновляем визуальные классы (надувание карточек)
+                    const cards = track.children;
+                    for (let i = 0; i < cards.length; i++) {
+                        if (i === activeIndex) {
+                            cards[i].classList.add('active');
+                        } else {
+                            cards[i].classList.remove('active');
+                        }
+                    }
+
+                    // Обновляем прогресс-бар и счетчик
+                    const progressPercent = ((activeIndex + 1) / TESTIMONIALS.length) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    currentSlideEl.textContent = `${formatPad(activeIndex + 1)} / ${formatPad(TESTIMONIALS.length)}`;
+                }
+
+                function scrollToSlide(index) {
+                    if (!st) return;
+                    index = Math.max(0, Math.min(index, TESTIMONIALS.length - 1));
+                    const scrollRange = st.end - st.start;
+                    const targetScroll = st.start + (index / (TESTIMONIALS.length - 1)) * scrollRange;
+
+                    window.scrollTo({
+                        top: targetScroll,
+                        behavior: 'smooth'
+                    });
+                }
+
+                const nextBtn = document.getElementById('next-btn');
+                const prevBtn = document.getElementById('prev-btn');
+
+                if (nextBtn) nextBtn.addEventListener('click', () => scrollToSlide(currentActiveIndex + 1));
+                if (prevBtn) prevBtn.addEventListener('click', () => scrollToSlide(currentActiveIndex - 1));
+
+                renderCards();
+                updateTrackPosition(0); // Инициализация первого кадра
+
+                // Инициализация GSAP
+                function initPinning() {
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        st = ScrollTrigger.create({
+                            trigger: '.reviews-preview-wrapper',
+                            start: 'center center',
+                            // Уменьшили общую длину скролла для большей динамики и быстроты отклика
+                            end: `+=${TESTIMONIALS.length * 400}`,
+                            pin: true,
+                            // Scrub: 1.2 дает "физическую" инерцию. Пользователь может прокрутить
+                            // колесо мыши очень быстро, и слайдер плавно догонит скроллбар за 1.2 секунды
+                            scrub: 1.2,
+                            onUpdate: (self) => {
+                                updateTrackPosition(self.progress);
+                            }
+                        });
+
+                        // Пересчитываем положения при ресайзе
+                        window.addEventListener('resize', () => {
+                            if (st) updateTrackPosition(st.progress);
+                        });
+
+                    } else {
+                        setTimeout(initPinning, 50);
+                    }
+                }
+
+                setTimeout(initPinning, 100);
+            });
+        })();
+    </script>
+</body>
 </html>
