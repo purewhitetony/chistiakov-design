@@ -884,7 +884,7 @@ body {
 /* ── Typography ── */
 .glfw-title {
     font-family: var(--glfw-secondary-font);
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.15;
     font-weight: 400;
     font-stretch: 150%;
@@ -1648,4 +1648,191 @@ body {
     /* dot.png is 16x16px; 32px tile = 16px dot + 16px gap */
     background-size: 16px 16px;
     will-change: transform;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EXTRACTED INLINE & EMBEDDED STYLES (Refactoring)
+   ════════════════════════════════════════════════════════════ */
+
+/* Layout Grid Styles (extracted from gl-layout-2-1-1-1 & gl-layout-2-2-0-1-1) */
+.gl-1 {
+    flex-direction: row;
+    justify-content: flex-end;
+    position: static;
+}
+
+.gl-1> :nth-child(3n+1),
+.gl-1> :nth-child(3n+2) {
+    width: calc(33.33% - 9.33333px);
+}
+
+.gl-1> :nth-child(3n+3) {
+    width: calc(33.34% - 9.33333px);
+}
+
+.gl-1> :nth-child(4n+1),
+.gl-1> :nth-child(4n+3) {
+    width: calc(27.08% - 7.5px);
+}
+
+.gl-1> :nth-child(4n+2) {
+    width: calc(18.34% - 7.5px);
+}
+
+.gl-1> :nth-child(4n+4) {
+    width: calc(27.5% - 7.5px);
+}
+
+@media (max-width: 768px) {
+
+    .gl-1> :nth-child(3n+1),
+    .gl-1> :nth-child(3n+2) {
+        width: 33.33%;
+    }
+
+    .gl-1> :nth-child(3n+3) {
+        width: 33.34%;
+    }
+
+    .gl-1> :nth-child(4n+1),
+    .gl-1> :nth-child(4n+2),
+    .gl-1> :nth-child(4n+3),
+    .gl-1> :nth-child(4n+4) {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gl-1> :nth-child(3n+1),
+    .gl-1> :nth-child(3n+2),
+    .gl-1> :nth-child(3n+3) {
+        width: 100%;
+    }
+
+    .gl-1> :nth-child(4n+1),
+    .gl-1> :nth-child(4n+2),
+    .gl-1> :nth-child(4n+3),
+    .gl-1> :nth-child(4n+4) {
+        width: 100%;
+    }
+}
+
+/* Hero Canvas & Stitch */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-foreground {
+    pointer-events: none;
+}
+
+.hero-foreground-inner,
+.hero-foreground-inner *,
+.hero-scroll,
+.hero-scroll * {
+    pointer-events: auto;
+}
+
+/* Header Scroll Dynamics */
+.glfw-header.glfw-section {
+    border-bottom-color: transparent;
+    pointer-events: none;
+    transition: border-bottom-color 0.45s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.glfw-header.glfw-section.glfw-header-visible {
+    border-bottom-color: var(--glfw-border);
+    pointer-events: auto;
+}
+
+.glfw-header.glfw-section::before {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.glfw-header.glfw-section.glfw-header-visible::before {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.glfw-nav-container {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
+    will-change: transform, opacity;
+}
+
+.glfw-nav-container.glfw-nav-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Extracted Hero Inline Classes */
+.hero-middle-inner-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--glfw-text);
+}
+
+.hero-title-custom {
+    font-family: 'TikTok Sans', sans-serif;
+    font-variation-settings: 'wdth' 150, 'wght' 800;
+}
+
+.hero-subtitle-custom {
+    color: var(--glfw-text-secondary);
+    letter-spacing: 0;
+    font-variation-settings: 'wdth' 150, 'wght' 300;
+}
+
+.specs-heading-custom {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.specs-key-custom {
+    color: var(--glfw-text-secondary);
+}
+
+.specs-key-custom-uppercase {
+    color: var(--glfw-text-secondary);
+    text-transform: uppercase;
+}
+
+.specs-val-custom {
+    text-transform: uppercase;
+}
+
+.hero-card-text-italic {
+    font-style: italic;
+}
+
+.hero-card-arrow-custom {
+    border-color: var(--glfw-accent-hover);
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+.hero-tags-container {
+    height: 51px;
+}
+
+.hero-tag-pill {
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: default;
+    justify-content: center;
 }

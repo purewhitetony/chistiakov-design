@@ -10,144 +10,16 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style id="gl-design-system-variables">
-        :root {
-            --glfw-base: #0d0d0f;
-            --glfw-contrast: #ffffff;
-            --glfw-accent: #4d8df5;
-            --glfw-accent-hover: #6ea3ff;
-            --glfw-accent-soft: rgba(77, 141, 245, 0.15);
-            --glfw-accent-text: #4d8df5;
-            --glfw-accent-text-hover: #6ea3ff;
-            --glfw-accent-secondary: #a78bfa;
-            --glfw-accent-secondary-hover: #c4b5fd;
-            --glfw-accent-secondary-soft: rgba(167, 139, 250, 0.12);
-            --glfw-accent-secondary-text: #a78bfa;
-            --glfw-accent-secondary-text-hover: #c4b5fd;
-            --glfw-bg: #0d0d0f;
-            --glfw-bg-alt: #101012;
-            --glfw-surface: #1a1a1e;
-            --glfw-surface-subtle: #141416;
-            --glfw-surface-elevated: #222226;
-            --glfw-border: rgba(255, 255, 255, 0.06);
-            --glfw-border-mid: rgba(255, 255, 255, 0.1);
-            --glfw-border-strong: rgba(255, 255, 255, 0.16);
-            --glfw-text: #ffffff;
-            --glfw-text-secondary: #e8eaed;
-            --glfw-text-body: #bdc1c6;
-            --glfw-text-muted: #9aa0a6;
-            --glfw-text-subtle: #5f6368;
-            --glfw-text-faint: #3c4043;
-            --glfw-primary-font: 'TikTok Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --glfw-secondary-font: 'TikTok Sans', sans-serif;
-            --glfw-transition-easing: cubic-bezier(0.2, 0, 0, 1);
-            --glfw-btn: #ffffff;
-            --glfw-btn-hover: #e8eaed;
-            --glfw-btn-soft: rgba(255, 255, 255, 0.08);
-            --glfw-btn-text: #0d0d0f;
-            --glfw-btn-text-hover: #0d0d0f;
-            --glfw--spacing--side: min(5vw, 48px);
-            --glfw--style--global--wide-size: 1280px;
-        }
-    </style>
-    <style id="gl-layout-2-1-1-1">
-        .gl-1> :nth-child(3n+1) {
-            width: calc(33.33% - 9.33333px);
-        }
-
-        .gl-1> :nth-child(3n+2) {
-            width: calc(33.33% - 9.33333px);
-        }
-
-        .gl-1> :nth-child(3n+3) {
-            width: calc(33.34% - 9.33333px);
-        }
-
-        @media (max-width: 768px) {
-            .gl-1> :nth-child(3n+1) {
-                width: 33.33%;
-            }
-
-            .gl-1> :nth-child(3n+2) {
-                width: 33.33%;
-            }
-
-            .gl-1> :nth-child(3n+3) {
-                width: 33.34%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gl-1> :nth-child(3n+1) {
-                width: 100%;
-            }
-
-            .gl-1> :nth-child(3n+2) {
-                width: 100%;
-            }
-
-            .gl-1> :nth-child(3n+3) {
-                width: 100%;
-            }
-        }
-    </style>
     <style id="gl-editor-styles">
-        .gl-1 {
-            flex-direction: row;
-            justify-content: flex-end;
-            position: static;
-        }
-    </style>
-    <style id="gl-layout-2-2-0-1-1">
-        .gl-1> :nth-child(4n+1) {
-            width: calc(27.08% - 7.5px);
-        }
-
-        .gl-1> :nth-child(4n+2) {
-            width: calc(18.34% - 7.5px);
-        }
-
-        .gl-1> :nth-child(4n+3) {
-            width: calc(27.08% - 7.5px);
-        }
-
-        .gl-1> :nth-child(4n+4) {
-            width: calc(27.5% - 7.5px);
-        }
-
         @media (max-width: 768px) {
-            .gl-1> :nth-child(4n+1) {
-                width: 50%;
-            }
-
-            .gl-1> :nth-child(4n+2) {
-                width: 50%;
-            }
-
-            .gl-1> :nth-child(4n+3) {
-                width: 50%;
-            }
-
-            .gl-1> :nth-child(4n+4) {
-                width: 50%;
+            .glfw-title {
+                font-size: 45px;
             }
         }
 
-        @media (max-width: 480px) {
-            .gl-1> :nth-child(4n+1) {
-                width: 100%;
-            }
-
-            .gl-1> :nth-child(4n+2) {
-                width: 100%;
-            }
-
-            .gl-1> :nth-child(4n+3) {
-                width: 100%;
-            }
-
-            .gl-1> :nth-child(4n+4) {
-                width: 100%;
+        @media (max-width: 375px) {
+            .glfw-title {
+                font-size: 16px;
             }
         }
     </style>
@@ -168,67 +40,6 @@
         </filter>
     </svg>
 
-    <!-- Stitch Effect Canvas Styles -->
-    <style id="hero-stitch-styles" data-gl-uid="user-style-0">
-        #hero-canvas {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-foreground {
-            pointer-events: none;
-        }
-
-        .hero-foreground-inner,
-        .hero-foreground-inner *,
-        .hero-scroll,
-        .hero-scroll * {
-            pointer-events: auto;
-        }
-    </style>
-
-    <!-- Header Scroll Reveal Styles -->
-    <style id="header-scroll-styles" data-gl-uid="user-style-1">
-        .glfw-header.glfw-section {
-            border-bottom-color: transparent;
-            pointer-events: none;
-            transition: border-bottom-color 0.45s cubic-bezier(0.2, 0, 0, 1);
-        }
-
-        .glfw-header.glfw-section.glfw-header-visible {
-            border-bottom-color: var(--glfw-border);
-            pointer-events: auto;
-        }
-
-        .glfw-header.glfw-section::before {
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
-        }
-
-        .glfw-header.glfw-section.glfw-header-visible::before {
-            transform: translateY(0px);
-            opacity: 1;
-        }
-
-        .glfw-nav-container {
-            transform: translateY(-30px);
-            opacity: 0;
-            transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1), opacity 0.45s cubic-bezier(0.2, 0, 0, 1);
-            will-change: transform, opacity;
-        }
-
-        .glfw-nav-container.glfw-nav-visible {
-            transform: translateY(0px);
-            opacity: 1;
-        }
-    </style>
-
     <!-- ══════════════════════════════════════════
          HEADER — Full-Width Dark Navigation Bar
          ══════════════════════════════════════════ -->
@@ -243,15 +54,15 @@
                             <path d="M2 12l10 5 10-5" stroke="#4d8df5" stroke-width="2" fill="none" opacity="0.5">
                             </path>
                         </svg>
-                        Google DeepMind
-                        <span class="glfw-nav-brand-divider">›</span>
+                        Chisto Design<span class="glfw-nav-brand-divider">›</span>
                     </a>
 
                     <ul class="glfw-nav-links">
-                        <li><a class="glfw-nav-link" href="#">Models</a></li>
-                        <li><a class="glfw-nav-link" href="#">Research</a></li>
-                        <li><a class="glfw-nav-link" href="#">Science</a></li>
-                        <li><a class="glfw-nav-link" href="#">About</a></li>
+                        <li><a class="glfw-nav-link" href="#">Как я работаю</a></li>
+                        <li><a class="glfw-nav-link" href="#">План действий</a></li>
+                        <li><a class="glfw-nav-link" href="#">Цены</a></li>
+                        <li><a class="glfw-nav-link" href="#">Отзывы</a></li>
+                        <li><a class="glfw-nav-link" href="#">Портфолио</a></li>
                     </ul>
 
                     <div class="glfw-nav-actions">
@@ -274,12 +85,12 @@
          ══════════════════════════════════════════ -->
     <section class="hero-viewport">
 
-        <!-- Background Video 
-        <div class="hero-bg">
+        <!-- Background Video  -->
+        <div class="hero-bg" style="margin-bottom: 0px;">
             <video autoplay="" muted="" loop="" playsinline="">
-                <source src="https://media.chisto-studio.ru/videos/anton-uiux_background.mp4" type="video/mp4">
+                <source src="https://media.chisto-studio.ru/videos/20260210_background.mp4" type="video/mp4">
             </video>
-        </div>-->
+        </div>
 
         <!-- Stitch Effect Canvas (overlay on video, under content) -->
         <canvas id="hero-canvas" aria-hidden="true" width="1250" height="779"
@@ -294,20 +105,17 @@
 
                 <!-- ── Middle: Title (left) + Specs (right) ── -->
                 <div class="hero-middle">
-                    <div class="hero-middle-inner"
-                        style="display:flex;align-items:center;gap:8px;letter-spacing:2px;font-weight:500;color:var(--glfw-text);">
+                    <div class="hero-middle-inner hero-middle-inner-flex">
 
                         <!-- Left Column -->
                         <div class="hero-left">
-                            <h1 class="glfw-title"
-                                style="font-family: 'TikTok Sans'; font-variation-settings: 'wdth' 150, 'wght' 800;">
+                            <h1 class="glfw-title hero-title-custom" style="font-stretch: 100%; font-size: 56px;">
                                 ANTON CHISTIAKOV// WΞB:DESIGNER
                             </h1>
-                            <p class="glfw-subtitle" style="color: var(--glfw-text-secondary); letter-spacing: 0px;">Я —
-                                независимый дизайнер с 20-летним опытом. Использую AI-пайплайн для
-                                генерации премиальной графики, чтобы вы получили продукт студийного уровня без переплат
-                                за
-                                штат сотрудников и менеджеров<!-- notionvc: dea69878-a38d-41fb-becd-089c1442d742 --></p>
+                            <p class="glfw-subtitle hero-subtitle-custom" style="letter-spacing: 1px;">Я — независимый
+                                дизайнер с 20-летним опытом.
+                                Использую AI-пайплайн для генерации премиальной графики, чтобы вы получили продукт
+                                студийного уровня без переплат за штат сотрудников и менеджеров.</p>
                             <div class="hero-icon-row">
                                 <button class="hero-icon-circle" aria-label="Layout">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -333,25 +141,25 @@
 
                         <!-- Right Column: Technical Specs -->
                         <div class="hero-right">
-                            <div class="specs-heading" style="text-align: right; text-transform: uppercase;">Мои навыки
-                            </div>
+                            <div class="specs-heading specs-heading-custom"
+                                style="font-family: &quot;TikTok Sans&quot;, -apple-system, BlinkMacSystemFont, sans-serif;">
+                                Мои навыки</div>
                             <div>
                                 <div class="specs-row">
-                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Focus</span>
-                                    <span class="specs-val" style="text-transform: uppercase;">Visual Systems</span>
+                                    <span class="specs-key specs-key-custom">Focus</span>
+                                    <span class="specs-val specs-val-custom">Visual Systems</span>
                                 </div>
                                 <div class="specs-row">
-                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Logic</span>
-                                    <span class="specs-val" style="text-transform: uppercase;">Creative Strategy</span>
+                                    <span class="specs-key specs-key-custom">Logic</span>
+                                    <span class="specs-val specs-val-custom">Creative Strategy</span>
                                 </div>
                                 <div class="specs-row">
-                                    <span class="specs-key"
-                                        style="color: var(--glfw-text-secondary); text-transform: uppercase;">Motion</span>
-                                    <span class="specs-val" style="text-transform: uppercase;">Interactive Design</span>
+                                    <span class="specs-key specs-key-custom-uppercase">Motion</span>
+                                    <span class="specs-val specs-val-custom">Interactive Design</span>
                                 </div>
                                 <div class="specs-row">
-                                    <span class="specs-key" style="color: var(--glfw-text-secondary);">Build</span>
-                                    <span class="specs-val" style="text-transform: uppercase;">Full-Stack Product</span>
+                                    <span class="specs-key specs-key-custom">Build</span>
+                                    <span class="specs-val specs-val-custom">Full-Stack Product</span>
                                 </div>
                             </div>
                         </div>
@@ -365,15 +173,12 @@
                     <!-- Bottom-left: Case Study Card with glass dispersion effect -->
                     <div class="hero-bottom-left glfw-glass">
                         <div class="glfw-card-body">
-                            <h3 class="glfw-card-title"><span style="" data-token-index="0"
-                                    class="notion-enable-hover">Прямой контакт от первой встречи до
-                                    релиза.</span><!-- notionvc: 3533e8c4-9c51-4eba-8b38-c72bd8aec65c --></h3>
-                            <p class="glfw-card-text"><span style="font-style:italic" data-token-index="0"
-                                    class="notion-enable-hover">Работаю напрямую с фаундерами. Один заменяю
-                                    производственный отдел студии благодаря
-                                    AI</span><!-- notionvc: 206e9298-1906-45ab-b002-0d302f13c32b --></p><a
-                                class="glfw-card-arrow" href="#"
-                                style="border-color: var(--glfw-accent-hover); opacity: 1; mix-blend-mode: normal;">
+                            <h3 class="glfw-card-title"><span data-token-index="0" class="notion-enable-hover">Прямой
+                                    контакт от первой встречи до релиза.</span></h3>
+                            <p class="glfw-card-text"><span class="notion-enable-hover hero-card-text-italic"
+                                    data-token-index="0">Работаю напрямую с фаундерами. Один заменяю производственный
+                                    отдел студии благодаря AI</span></p>
+                            <a class="glfw-card-arrow hero-card-arrow-custom" href="#">
                                 View Case Study
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round">
@@ -388,16 +193,11 @@
 
 
                     <!-- Bottom-right: Tag Pills -->
-                    <div class="hero-tags gl-1" style="height: 51px;">
-
-                        <span class="glfw-btn-outline"
-                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">UI/UX</span><span
-                            class="glfw-btn-outline"
-                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">A+</span>
-                        <span class="glfw-btn-outline"
-                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">бренд</span>
-                        <span class="glfw-btn-outline"
-                            style="padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: default; justify-content: center;">веб</span>
+                    <div class="hero-tags gl-1 hero-tags-container">
+                        <span class="glfw-btn-outline hero-tag-pill">UI/UX</span>
+                        <span class="glfw-btn-outline hero-tag-pill">A+</span>
+                        <span class="glfw-btn-outline hero-tag-pill">бренд</span>
+                        <span class="glfw-btn-outline hero-tag-pill">веб</span>
                     </div>
 
                 </div>
@@ -407,7 +207,7 @@
                     <div class="hero-scroll-mouse">
                         <div class="hero-scroll-dot"></div>
                     </div>
-                    <span class="hero-scroll-label">Scroll</span>
+                    <span class="hero-scroll-label" style="border-style: none;">Дальше<br>больше</span>
                 </div>
 
             </div><!-- /.hero-foreground-inner -->
@@ -783,14 +583,14 @@
             const GRID_SPACING = 16;
             const DOT_RADIUS = 1;
             const INTERACTION_RADIUS = 725;
-            const DISTORTION_STRENGTH = 28;
+            const DISTORTION_STRENGTH = 128;
             const LERP_FACTOR = 0.035;
             const NOISE_STRENGTH = 6;
             const NOISE_SCALE = 0.04;
             const NOISE_SPEED = 0.0008;
             const COLOR_BASE = [68, 68, 68];
-            const COLOR_ACCENT_1 = [96, 86, 240];
-            const COLOR_ACCENT_2 = [64, 217, 198];
+            const COLOR_ACCENT_1 = [196, 86, 240];
+            const COLOR_ACCENT_2 = [164, 217, 198];
 
             let particles = [];
             let mouse = { x: -1000, y: -1000, isActive: false };
