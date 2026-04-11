@@ -884,7 +884,7 @@ body {
 /* ── Typography ── */
 .glfw-title {
     font-family: var(--glfw-secondary-font);
-    font-size: 30px;
+    font-size: 16px; /* Base for narrow mobile (<= 375px) */
     line-height: 1.15;
     font-weight: 400;
     font-stretch: 150%;
@@ -893,11 +893,26 @@ body {
     letter-spacing: -0.02em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 376px) {
     .glfw-title {
-        font-size: 56px;
+        font-size: 45px; /* Mobile landscape / Tablet */
+    }
+}
+
+@media (min-width: 769px) {
+    .glfw-title {
+        font-size: 56px; /* Desktop */
         line-height: 1.1;
     }
+}
+
+/* Extracted Inline Hero Typography Styles */
+.hero-title-custom {
+    font-stretch: 100%;
+}
+
+.hero-subtitle-custom {
+    letter-spacing: 1px;
 }
 
 .glfw-subtitle {
