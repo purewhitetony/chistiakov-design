@@ -5,6 +5,8 @@
 !index.html
 !assets/
 !assets/**
+!ref/ScrollTextMotion-main
+!ref/ScrollTextMotion-main/**
 
 # Unignore .gitignore itself
 !.gitignore

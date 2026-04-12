@@ -39,8 +39,203 @@
     --glfw-btn-soft: rgba(255, 255, 255, 0.08);
     --glfw-btn-text: #0d0d0f;
     --glfw-btn-text-hover: #0d0d0f;
-    --glfw--spacing--side: min(5vw, 48px);
+    --glfw--spacing--side: clamp(10px, 5vw, 48px);
     --glfw--style--global--wide-size: 1280px;
+
+    /* Typography Scale */
+    /* Базовый размер (до 640px) */
+    --font-h1: 3.000rem;
+    --wght-h1: 700;
+    --wdth-h1: 150;
+
+    --font-h2: 2.250rem;
+    --wght-h2: 600;
+    --wdth-h2: 150;
+
+    --font-h3: 1.750rem;
+    --wght-h3: 600;
+    --wdth-h3: 130;
+
+    --font-h4: 1.500rem;
+    --wght-h4: 500;
+    --wdth-h4: 120;
+
+    --font-h5: 1.250rem;
+    --wght-h5: 500;
+    --wdth-h5: 100;
+
+    --font-lead: 1.125rem;
+    --wght-lead: 500;
+    --wdth-lead: 100;
+
+    --font-body: 1.000rem;
+    --wght-body: 400;
+    --wdth-body: 100;
+
+    --font-caption: 0.875rem;
+    --wght-caption: 400;
+    --wdth-caption: 100;
+
+    --font-overline: 0.750rem;
+    --wght-overline: 300;
+    --wdth-overline: 100;
+    --font-link-small: 0.875rem;
+    --wght-link: 500;
+}
+
+/* ── Typography Media Queries (Root Variables) ── */
+
+/* Breakpoint 640px */
+@media (min-width: 640px) {
+    :root {
+        --font-h1: 3.500rem;
+        --font-h2: 2.750rem;
+        --font-h3: 2.000rem;
+        --font-h4: 1.750rem;
+        --font-h5: 1.375rem;
+        --font-lead: 1.188rem;
+    }
+}
+
+/* Breakpoint 768px */
+@media (min-width: 768px) {
+    :root {
+        --font-h1: 4.000rem;
+        --font-h2: 3.000rem;
+        --font-h3: 2.250rem;
+        --font-h4: 1.875rem;
+        --font-h5: 1.500rem;
+        --font-lead: 1.250rem;
+    }
+}
+
+/* Breakpoint 1024px */
+@media (min-width: 1024px) {
+    :root {
+        --font-h1: 4.500rem;
+        --font-h2: 3.500rem;
+        --font-h3: 2.500rem;
+        --font-h4: 2.000rem;
+        --font-h5: 1.625rem;
+    }
+}
+
+/* Breakpoint 1280px (Original Desktop Design) */
+@media (min-width: 1280px) {
+    :root {
+        --font-h1: 5.000rem;
+        --font-h2: 3.813rem;
+        --font-h3: 2.938rem;
+        --font-h4: 2.250rem;
+        --font-h5: 1.688rem;
+        --font-lead: 1.313rem;
+        --font-body: 1.000rem;
+        --font-caption: 0.750rem;
+        --font-overline: 0.563rem;
+    }
+}
+
+/* Breakpoint 1536px (Ultrawide) */
+@media (min-width: 1536px) {
+    :root {
+        --font-h1: 5.500rem;
+        --font-h2: 4.250rem;
+        --font-h3: 3.250rem;
+        --font-h4: 2.500rem;
+        --font-h5: 1.875rem;
+        --font-lead: 1.438rem;
+        --font-body: 1.125rem;
+        --font-caption: 0.875rem;
+        --font-overline: 0.625rem;
+    }
+}
+
+/* ── Unified Typography System ── */
+h1,
+.t-h1,
+.hero-title-custom {
+    font-size: var(--font-h1);
+    font-variation-settings: 'wght' var(--wght-h1), 'wdth' var(--wdth-h1);
+    line-height: 1.1;
+    margin: 0;
+    /* Принудительно переносим слова, если они не влезают в контейнер */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    /* Убеждаемся, что текст может переноситься на новые строки */
+    white-space: normal;
+}
+
+h2,
+.t-h2 {
+    font-size: var(--font-h2);
+    font-variation-settings: 'wght' var(--wght-h2), 'wdth' var(--wdth-h2);
+    line-height: 1.15;
+    margin: 0;
+}
+
+h3,
+.t-h3 {
+    font-size: var(--font-h3);
+    font-variation-settings: 'wght' var(--wght-h3), 'wdth' var(--wdth-h3);
+    line-height: 1.2;
+    margin: 0;
+}
+
+h4,
+.t-h4 {
+    font-size: var(--font-h4);
+    font-variation-settings: 'wght' var(--wght-h4), 'wdth' var(--wdth-h4);
+    line-height: 1.25;
+    margin: 0;
+}
+
+h5,
+.t-h5 {
+    font-size: var(--font-h5);
+    font-variation-settings: 'wght' var(--wght-h5), 'wdth' var(--wdth-h5);
+    line-height: 1.3;
+    margin: 0;
+}
+
+h6,
+.t-lead {
+    font-size: var(--font-lead);
+    font-variation-settings: 'wght' var(--wght-lead), 'wdth' var(--wdth-lead);
+    line-height: 1.4;
+    margin: 0;
+}
+
+p,
+.t-body {
+    font-size: var(--font-body);
+    font-variation-settings: 'wght' var(--wght-body), 'wdth' var(--wdth-body);
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+small,
+.t-caption {
+    font-size: var(--font-caption);
+    font-variation-settings: 'wght' var(--wght-caption), 'wdth' var(--wdth-caption);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.t-link-small {
+    font-size: var(--font-link-small);
+    font-variation-settings: 'wght' var(--wght-link), 'wdth' var(--wdth-body);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.t-overline {
+    font-size: var(--font-overline);
+    font-variation-settings: 'wght' var(--wght-overline), 'wdth' var(--wdth-overline);
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /* ── Reset & Base ── */
@@ -293,18 +488,12 @@ body {
 
 .glfw-section-title {
     font-family: var(--glfw-secondary-font);
-    font-size: 32px;
-    font-weight: 400;
+    font-size: var(--font-h2);
+    font-variation-settings: 'wght' var(--wght-h2), 'wdth' var(--wdth-h2);
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--glfw-text);
     margin-bottom: 16px;
-}
-
-@media (min-width: 768px) {
-    .glfw-section-title {
-        font-size: 40px;
-    }
 }
 
 .glfw-section-desc {
@@ -881,55 +1070,6 @@ body {
     pointer-events: none;
 }
 
-/* ── Typography ── */
-.glfw-title {
-    font-family: var(--glfw-secondary-font);
-    font-size: 16px; /* Base for narrow mobile (<= 375px) */
-    line-height: 1.15;
-    font-weight: 400;
-    font-stretch: 150%;
-    color: var(--glfw-text);
-    margin: 0 0 40px;
-    letter-spacing: -0.02em;
-}
-
-@media (min-width: 376px) {
-    .glfw-title {
-        font-size: 45px; /* Mobile landscape / Tablet */
-    }
-}
-
-@media (min-width: 769px) {
-    .glfw-title {
-        font-size: 56px; /* Desktop */
-        line-height: 1.1;
-    }
-}
-
-/* Extracted Inline Hero Typography Styles */
-.hero-title-custom {
-    font-stretch: 100%;
-}
-
-.hero-subtitle-custom {
-    letter-spacing: 1px;
-}
-
-.glfw-subtitle {
-    font-size: 18px;
-    color: var(--glfw-text-muted);
-    max-width: 600px;
-    margin-bottom: 48px;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-@media (min-width: 768px) {
-    .glfw-subtitle {
-        font-size: 20px;
-    }
-}
-
 /* ═══════════════════════════════════════════════════════════
    HERO SECTION — Page-specific Layout (from header.html)
    ═══════════════════════════════════════════════════════════ */
@@ -983,7 +1123,7 @@ body {
     padding-left: var(--glfw--spacing--side);
     padding-right: var(--glfw--spacing--side);
     padding-top: 40px;
-    padding-bottom: 0;
+    padding-bottom: 120px; /* Создаем "подушку безопасности" для мышки скролла */
 }
 
 .hero-foreground-inner {
@@ -1048,29 +1188,8 @@ body {
 
 .hero-left {
     max-width: 520px;
+    width: 100%; /* Добавляем, чтобы контейнер не схлопывался */
     flex-shrink: 0;
-}
-
-.hero-left .glfw-title {
-    font-size: 56px;
-    font-weight: 900;
-    font-stretch: 150%;
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    margin: 0;
-}
-
-@media (min-width: 768px) {
-    .hero-left .glfw-title {
-        font-size: 72px;
-    }
-}
-
-.hero-left .glfw-subtitle {
-    margin-top: 28px;
-    margin-bottom: 0;
-    max-width: 420px;
-    font-size: 15px;
 }
 
 .hero-icon-row {
@@ -1255,7 +1374,7 @@ body {
     .hero-bottom {
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px;
+        gap: 32px; /* Воздух между карточкой и тегами */
     }
 
     .hero-tags {
@@ -1264,9 +1383,6 @@ body {
 }
 
 @media (max-width: 640px) {
-    .hero-left .glfw-title {
-        font-size: 38px;
-    }
 
     .hero-nav-row {
         gap: 16px;
@@ -1636,8 +1752,6 @@ body {
 .blog-card-link {
     text-decoration: none;
     color: var(--glfw-text-muted);
-    font-size: 14px;
-    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -1809,16 +1923,7 @@ body {
     color: var(--glfw-text);
 }
 
-.hero-title-custom {
-    font-family: 'TikTok Sans', sans-serif;
-    font-variation-settings: 'wdth' 150, 'wght' 800;
-}
-
-.hero-subtitle-custom {
-    color: var(--glfw-text-secondary);
-    letter-spacing: 0;
-    font-variation-settings: 'wdth' 150, 'wght' 300;
-}
+/* Font variation overrides removed — mapped directly to t-h1 and t-lead utilities */
 
 .specs-heading-custom {
     text-align: right;
@@ -1883,6 +1988,10 @@ body {
     z-index: 10;
 }
 
+.reviews-header .glfw-title {
+    text-transform: uppercase;
+}
+
 .slider-container {
     display: flex;
     align-items: center;
@@ -1910,7 +2019,9 @@ body {
 }
 
 @media (min-width: 768px) {
-    .slider-track { gap: 48px; }
+    .slider-track {
+        gap: 48px;
+    }
 }
 
 /* Base Card Styles */
@@ -1938,6 +2049,7 @@ body {
 .review-card-wrapper.glfw-glass {
     border: 1px solid var(--glfw-border-mid);
 }
+
 .review-card-wrapper.glfw-glass::before {
     clip-path: inset(30px round 16px);
 }
