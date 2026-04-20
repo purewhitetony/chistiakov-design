@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
     <title>Anton's Chistiakov — Web Studio</title>
     <!-- <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet"> -->
@@ -184,29 +185,114 @@
         <div class="glfw-content-wrap about-grid">
 
             <!-- Left Side -->
-            <div class="about-left">
-                <h2 class="t-h2 about-h2">Получите готовый сайт для вашего бизнеса за 14 дней — без агентской бюрократии
-                    и переплат.</h2>
-                <h3 class="t-h3 about-h3 text-muted" style="color: var(--glfw-text-muted);">Обычно разработка сайта —
-                    это месяцы согласований, раздутые сметы и «сломанный телефон», где аккаунт-менеджеры искажают ваши
-                    задачи.</h3>
-                <h5 class="t-h5 about-h5">Со мной вы общаетесь напрямую, избегая “футбола” между сотрудниками. Я
-                    объединил свой 20-летний опыт арт-дирекшена в UX/UI, айдентике, 3D и моушен-дизайне с мощью
-                    нейросетей: создаю бизнес-стратегию для ваших продаж, а рутинную отрисовку делегирую алгоритмам.
-                </h5>
-                <p class="t-body about-text" style="color: var(--glfw-text-muted);">В результате вы получаете ресурс
-                    целого агентства, но работаете с одним человеком по фиксированной цене.</p>
+            <div class="about-left" style="gap: 56px;">
+                <h2 class="t-h2 about-h2"
+                    style="font-size: clamp(36px, 5.5vw, 82px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.98; max-width: 95%;">
+                    Получите готовый сайт для вашего бизнеса за 14 дней
+                </h2>
+
+                <div
+                    style="height: 1px; width: 100%; background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);">
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: -16px;">
+                    <!-- Speed -->
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            style="opacity: 0.8;">
+                            <line x1="10" x2="14" y1="2" y2="2" />
+                            <line x1="12" x2="15" y1="14" y2="11" />
+                            <circle cx="12" cy="14" r="8" />
+                        </svg>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 class="t-h5" style="margin: 0; font-weight: 700;">Скорость</h3>
+                            <p class="t-body text-muted"
+                                style="margin: 0; color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.6;">
+                                Обычно разработка — это месяцы. Мы же сдаем готовый сайт за две недели, избегая ненужных
+                                согласований.</p>
+                        </div>
+                    </div>
+
+                    <!-- Direct Access -->
+                    <div
+                        style="display: flex; flex-direction: column; gap: 20px; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            style="opacity: 0.8;">
+                            <path d="M17 12H3" />
+                            <path d="m11 18 6-6-6-6" />
+                            <path d="M21 5v14" />
+                        </svg>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 class="t-h5" style="margin: 0; font-weight: 700;">Прямой Доступ</h3>
+                            <p class="t-body text-muted"
+                                style="margin: 0; color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.6;">Со
+                                мной вы общаетесь напрямую, без сломанного телефона. Мой 20-летний опыт арт-дирекшена
+                                работает на вас.</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Power -->
+                    <div
+                        style="display: flex; flex-direction: column; gap: 20px; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px;">
+                        <div
+                            style="position: relative; display: flex; align-items: center; justify-content: flex-start; opacity: 0.8;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="16" height="16" x="4" y="4" rx="2" />
+                                <rect width="6" height="6" x="9" y="9" rx="1" />
+                                <path d="M15 2v2" />
+                                <path d="M15 20v2" />
+                                <path d="M2 15h2" />
+                                <path d="M2 9h2" />
+                                <path d="M20 15h2" />
+                                <path d="M20 9h2" />
+                                <path d="M9 2v2" />
+                                <path d="M9 20v2" />
+                            </svg>
+                            <div style="position: absolute; left: 11px; top: 12px; font-size: 10px; font-weight: 700;">
+                                AI</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <h3 class="t-h5" style="margin: 0; font-weight: 700;">Мощь Нейросетей</h3>
+                            <p class="t-body text-muted"
+                                style="margin: 0; color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.6;">Я
+                                объединил свой опыт в UX/UI, 3D и моушен-дизайне с ИИ, делегируя рутину алгоритмам.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Right Side -->
-            <div class="about-right glfw-glass">
-                <h4 class="t-h4 about-h4">Результат: Вы получаете готовый сайт за 14 дней и начинаете привлекать
-                    клиентов. Быстро, прозрачно и под ключ.</h4>
-                <div class="about-cta">
-                    <p class="t-body">👇 Готовы начать?</p>
+            <!-- Right Side CTA Card -->
+            <div
+                style="background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%); padding: 1px; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                <div
+                    style="background-color: #111111; border-radius: 31px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; height: 100%;">
+
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <p class="t-body"
+                            style="font-size: clamp(20px, 2vw, 24px); line-height: 1.4; color: rgba(255,255,255,0.9); margin: 0;">
+                            <span style="font-weight: 700;">Результат:</span> Вы получаете готовый сайт без агентской
+                            бюрократии и переплат за 14 дней и начинаете привлекать клиентов. Быстро, прозрачно и под
+                            ключ.
+                        </p>
+
+                        <div style="display: inline-flex; align-items: center;">
+                            <span class="t-body"
+                                style="font-size: 20px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;">👉
+                                Готовы начать?</span>
+                        </div>
+                    </div>
+
                     <button class="glfw-btn-filled"
-                        style="padding-left: 28px; padding-right: 28px; padding-top: 16px; padding-bottom: 16px;">Записаться
-                        на диагностику ✅</button>
+                        style="width: 100%; border-radius: 16px; padding: 20px; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; background-color: #fff; color: #000; border: none; cursor: pointer; text-decoration: none;">
+                        <span>Записаться на диагностику</span>
+                        <span style="font-size: 20px; line-height: 1;">✅</span>
+                    </button>
+
                 </div>
             </div>
 
@@ -338,6 +424,389 @@
     </div>
 
     <!-- ══════════════════════════════════════════
+         BLOCK 1.8: CASES SECTION
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="glfw-content-wrap">
+
+            <div style="margin-bottom: 80px;">
+                <h2 class="t-h2"
+                    style="font-weight: 200; text-transform: uppercase; letter-spacing: -0.05em; font-size: clamp(60px, 8vw, 96px); margin-bottom: 16px; margin-top: 0;">
+                    Кейсы
+                </h2>
+                <p class="t-caption"
+                    style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; font-weight: 700; color: rgba(255,255,255,0.3); margin: 0;">
+                    Selected Works Collection
+                </p>
+            </div>
+
+            <div style="position: relative;">
+
+                <!-- CASE 1 -->
+                <div
+                    style="position: sticky; top: 120px; z-index: 10; width: 100%; border-radius: 32px 32px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; background: linear-gradient(135deg, #1a1a22, #0a0a0f); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: -20px -20px 50px rgba(0,0,0,0.8); margin-bottom: 10vh;">
+                    <div style="padding: clamp(32px, 5vw, 48px);">
+                        <!-- Card Header -->
+                        <div
+                            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; align-items: center;">
+                                <span
+                                    style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #00f2ff; box-shadow: 0 0 10px #00f2ff; margin-right: 16px;"></span>
+                                <span class="t-h4" style="font-weight: 300; letter-spacing: -0.02em; margin: 0;">01 /
+                                    <span style="opacity: 0.4;">CoolDogs NFT-Ecosystem</span></span>
+                            </div>
+                            <button
+                                style="padding: 10px 24px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 99px; background-color: #fff; color: #000; border: none; cursor: pointer;">
+                                Смотреть проект
+                            </button>
+                        </div>
+                        <!-- Card Content -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 48px; padding-top: 48px;">
+                            <div style="flex: 1 1 500px; display: flex; flex-direction: column; gap: 40px;">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <span
+                                        style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Overview</span>
+                                    <h3 class="t-h3" style="font-weight: 200; line-height: 1.1; margin: 0;">
+                                        Sold-out коллекция с объемом торгов 2,025+ ETH (~8 млн $)
+                                    </h3>
+                                </div>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-top: 32px;">
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">14.2ms</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Avg
+                                            Latency</span>
+                                    </div>
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">99.9%</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Uptime
+                                            Ratio</span>
+                                    </div>
+                                </div>
+                                <p class="t-body"
+                                    style="color: rgba(255,255,255,0.4); max-width: 600px; margin: 0; line-height: 1.6;">
+                                    Art Direction, UX/UI, Generative Art. A deep-dive into the architectural overhaul of
+                                    global nodes, focusing on latency reduction and immersive monitoring interfaces.
+                                </p>
+                            </div>
+                            <div style="flex: 1 1 300px;">
+                                <div
+                                    style="position: relative; aspect-ratio: 1; border-radius: 16px; border: 1px dashed rgba(255,255,255,0.1); background-color: rgba(255,255,255,0.02); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,242,255,0.08) 0%, transparent 70%); pointer-events: none;">
+                                    </div>
+                                    <div style="text-align: center; position: relative; z-index: 10;">
+                                        <div style="font-size: 36px; opacity: 0.1; margin-bottom: 16px;">◆</div>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Visual
+                                            Asset 882-C</span>
+                                    </div>
+                                    <div
+                                        style="position: absolute; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 12px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.2);">
+                                        <span>View Assets</span>
+                                        <div style="width: 40px; height: 1px; background-color: rgba(255,255,255,0.2);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE 2 -->
+                <div
+                    style="position: sticky; top: 160px; z-index: 11; width: 100%; border-radius: 32px 32px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; background: linear-gradient(135deg, #1a1a22, #0a0a0f); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: -20px -20px 50px rgba(0,0,0,0.8); margin-bottom: 10vh;">
+                    <div style="padding: clamp(32px, 5vw, 48px);">
+                        <!-- Card Header -->
+                        <div
+                            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; align-items: center;">
+                                <span
+                                    style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #00f2ff; box-shadow: 0 0 10px #00f2ff; margin-right: 16px;"></span>
+                                <span class="t-h4" style="font-weight: 300; letter-spacing: -0.02em; margin: 0;">02 /
+                                    <span style="opacity: 0.4;">Moley Robotics GUI v1.0</span></span>
+                            </div>
+                            <button
+                                style="padding: 10px 24px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 99px; background-color: #fff; color: #000; border: none; cursor: pointer;">
+                                Смотреть проект
+                            </button>
+                        </div>
+                        <!-- Card Content -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 48px; padding-top: 48px;">
+                            <div style="flex: 1 1 500px; display: flex; flex-direction: column; gap: 40px;">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <span
+                                        style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Overview</span>
+                                    <h3 class="t-h3" style="font-weight: 200; line-height: 1.1; margin: 0;">
+                                        $1.25 млн инвестиций | Награда CES Asia «Best of the Best» | Первый в мире
+                                        робот-шеф
+                                    </h3>
+                                </div>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-top: 32px;">
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">14.2ms</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Avg
+                                            Latency</span>
+                                    </div>
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">99.9%</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Uptime
+                                            Ratio</span>
+                                    </div>
+                                </div>
+                                <p class="t-body"
+                                    style="color: rgba(255,255,255,0.4); max-width: 600px; margin: 0; line-height: 1.6;">
+                                    UX/UI, Product Design, Art Direction. A deep-dive into the architectural overhaul of
+                                    global nodes, focusing on latency reduction and immersive monitoring interfaces.
+                                </p>
+                            </div>
+                            <div style="flex: 1 1 300px;">
+                                <div
+                                    style="position: relative; aspect-ratio: 1; border-radius: 16px; border: 1px dashed rgba(255,255,255,0.1); background-color: rgba(255,255,255,0.02); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,242,255,0.08) 0%, transparent 70%); pointer-events: none;">
+                                    </div>
+                                    <div style="text-align: center; position: relative; z-index: 10;">
+                                        <div style="font-size: 36px; opacity: 0.1; margin-bottom: 16px;">◆</div>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Visual
+                                            Asset 882-C</span>
+                                    </div>
+                                    <div
+                                        style="position: absolute; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 12px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.2);">
+                                        <span>View Assets</span>
+                                        <div style="width: 40px; height: 1px; background-color: rgba(255,255,255,0.2);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE 3 -->
+                <div
+                    style="position: sticky; top: 200px; z-index: 12; width: 100%; border-radius: 32px 32px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; background: linear-gradient(135deg, #1a1a22, #0a0a0f); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: -20px -20px 50px rgba(0,0,0,0.8); margin-bottom: 10vh;">
+                    <div style="padding: clamp(32px, 5vw, 48px);">
+                        <!-- Card Header -->
+                        <div
+                            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; align-items: center;">
+                                <span
+                                    style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #00f2ff; box-shadow: 0 0 10px #00f2ff; margin-right: 16px;"></span>
+                                <span class="t-h4" style="font-weight: 300; letter-spacing: -0.02em; margin: 0;">03 /
+                                    <span style="opacity: 0.4;">MKSmedia.ru: Rebrand & Design System</span></span>
+                            </div>
+                            <button
+                                style="padding: 10px 24px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 99px; background-color: #fff; color: #000; border: none; cursor: pointer;">
+                                Смотреть проект
+                            </button>
+                        </div>
+                        <!-- Card Content -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 48px; padding-top: 48px;">
+                            <div style="flex: 1 1 500px; display: flex; flex-direction: column; gap: 40px;">
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <span
+                                        style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Overview</span>
+                                    <h3 class="t-h3" style="font-weight: 200; line-height: 1.1; margin: 0;">
+                                        100+ страниц, 3D-пайплайн, 15 лет сотрудничества
+                                    </h3>
+                                </div>
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-top: 32px;">
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">14.2ms</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Avg
+                                            Latency</span>
+                                    </div>
+                                    <div
+                                        style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; display: flex; flex-direction: column; gap: 4px;">
+                                        <span style="font-size: 28px; font-weight: 200;">99.9%</span>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;">Uptime
+                                            Ratio</span>
+                                    </div>
+                                </div>
+                                <p class="t-body"
+                                    style="color: rgba(255,255,255,0.4); max-width: 600px; margin: 0; line-height: 1.6;">
+                                    Art Direction, UX/UI, 3D & Motion, Системный дизайн. A deep-dive into the
+                                    architectural overhaul of global nodes, focusing on latency reduction and immersive
+                                    monitoring interfaces.
+                                </p>
+                            </div>
+                            <div style="flex: 1 1 300px;">
+                                <div
+                                    style="position: relative; aspect-ratio: 1; border-radius: 16px; border: 1px dashed rgba(255,255,255,0.1); background-color: rgba(255,255,255,0.02); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,242,255,0.08) 0%, transparent 70%); pointer-events: none;">
+                                    </div>
+                                    <div style="text-align: center; position: relative; z-index: 10;">
+                                        <div style="font-size: 36px; opacity: 0.1; margin-bottom: 16px;">◆</div>
+                                        <span
+                                            style="font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;">Visual
+                                            Asset 882-C</span>
+                                    </div>
+                                    <div
+                                        style="position: absolute; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 12px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.2);">
+                                        <span>View Assets</span>
+                                        <div style="width: 40px; height: 1px; background-color: rgba(255,255,255,0.2);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 3.5: CONTACTS SECTION
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section"
+        style="position: relative; overflow: hidden; padding-top: 120px; padding-bottom: 120px;">
+        <!-- Structural Decor -->
+        <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.2;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; background-color: rgba(255,255,255,0.1);">
+            </div>
+            <div
+                style="position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: rgba(255,255,255,0.1);">
+            </div>
+            <div
+                style="position: absolute; left: 0; top: 0; height: 100%; width: 1px; background-color: rgba(255,255,255,0.1);">
+            </div>
+            <div
+                style="position: absolute; right: 0; top: 0; height: 100%; width: 1px; background-color: rgba(255,255,255,0.1);">
+            </div>
+        </div>
+
+        <div class="glfw-content-wrap" style="position: relative; z-index: 10; max-width: 1200px; margin: 0 auto;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(40px, 6vw, 100px); align-items: stretch;">
+
+                <!-- Left Column -->
+                <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 16px 0;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+                            <span
+                                style="width: 6px; height: 6px; background-color: var(--glfw-accent-primary, #00f2ff); border-radius: 50%;"></span>
+                            <span
+                                style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--glfw-accent-primary, #00f2ff);">Контакты
+                                / V.01</span>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            <h2 class="t-h2"
+                                style="font-size: clamp(60px, 8vw, 84px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.85; text-transform: uppercase; margin: 0;">
+                                Напишите<br />мне
+                            </h2>
+                            <p class="t-body"
+                                style="color: rgba(255,255,255,0.6); max-width: 400px; line-height: 1.6; margin-top: 16px; margin-bottom: 0;">
+                                Если ваша сфера не похожа ни на один из примеров — напишите мне. Мы разберем вашу задачу
+                                индивидуально.
+                            </p>
+                            <div
+                                style="width: 64px; height: 1px; background-color: var(--glfw-accent-primary, #00f2ff); margin-top: 24px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 32px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.3); font-weight: 500;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: rgba(255, 255, 255, 0.5);">01</span> / Квантовый ИИ
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: rgba(255, 255, 255, 0.5);">02</span> / Автоматизация
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="width: 6px; height: 6px; background-color: var(--glfw-accent-primary, #00f2ff); border-radius: 50%;"></span>
+                            В работе
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Form -->
+                <div>
+                    <div
+                        style="position: relative; background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; height: 100%;">
+                        <div
+                            style="display: flex; flex-direction: column; gap: 1px; background-color: rgba(255,255,255,0.1); height: 100%;">
+                            <div
+                                style="background-color: var(--glfw-bg, #050505); padding: clamp(24px, 4vw, 32px); display: flex; flex-direction: column; gap: 32px; flex-grow: 1;">
+
+                                <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label
+                                            style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4);">Имя</label>
+                                        <input type="text" placeholder="Ваше полное имя"
+                                            style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0; color: #fff; outline: none; font-family: inherit; font-size: 16px;">
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <label
+                                            style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4);">Email</label>
+                                        <input type="email" placeholder="hello@company.ru"
+                                            style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0; color: #fff; outline: none; font-family: inherit; font-size: 16px;">
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; gap: 8px; flex-grow: 1;">
+                                        <label
+                                            style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4);">Сообщение</label>
+                                        <textarea placeholder="Кратко опишите ваш запрос..."
+                                            style="width: 100%; height: 128px; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0; color: #fff; outline: none; resize: none; font-family: inherit; font-size: 16px;"></textarea>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="display: flex; flex-direction: column; gap: 16px; margin-top: auto; padding-top: 32px;">
+                                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                                        <div style="display: flex; align-items: center; gap: 16px; cursor: pointer;">
+                                            <div
+                                                style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); font-size: 10px; font-family: monospace; transition: all 0.2s;">
+                                                M</div>
+                                            <span
+                                                style="font-size: 11px; color: rgba(255,255,255,0.5); transition: color 0.2s;">hello@quantumai.studio</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 16px; cursor: pointer;">
+                                            <div
+                                                style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); font-size: 10px; font-family: monospace; transition: all 0.2s;">
+                                                P</div>
+                                            <span
+                                                style="font-size: 11px; color: rgba(255,255,255,0.5); transition: color 0.2s;">+1
+                                                (501) 123-4567</span>
+                                        </div>
+                                    </div>
+
+                                    <button class="glfw-btn-filled"
+                                        style="width: 100%; height: 56px; margin-top: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; border-radius: 99px; background-color: var(--glfw-accent-primary, #00f2ff); color: #000; border: none; cursor: pointer;">
+                                        Отправить запрос
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
          BLOCK 3: REVIEWS SECTION
          ══════════════════════════════════════════ -->
     <section class="reviews-preview-wrapper glfw-section">
@@ -410,7 +879,8 @@
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Gemini 3.1 Pro в Google Antigravity</h3>
                         <p class="blog-card-meta">19 фев 2026 • Продукт</p>
-                        <a href="#" class="blog-card-link t-link-small">Читать статью <span class="blog-arrow">›</span></a>
+                        <a href="#" class="blog-card-link t-link-small">Читать статью <span
+                                class="blog-arrow">›</span></a>
                     </div>
                 </article>
 
@@ -427,7 +897,8 @@
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Gemini 3 Flash в Google Antigravity</h3>
                         <p class="blog-card-meta">17 дек 2025 • Продукт</p>
-                        <a href="#" class="blog-card-link t-link-small">Читать статью <span class="blog-arrow">›</span></a>
+                        <a href="#" class="blog-card-link t-link-small">Читать статью <span
+                                class="blog-arrow">›</span></a>
                     </div>
                 </article>
 
@@ -442,7 +913,8 @@
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Nano Banana Pro в Google Antigravity</h3>
                         <p class="blog-card-meta">20 ноя 2025 • Продукт</p>
-                        <a href="#" class="blog-card-link t-link-small">Читать статью <span class="blog-arrow">›</span></a>
+                        <a href="#" class="blog-card-link t-link-small">Читать статью <span
+                                class="blog-arrow">›</span></a>
                     </div>
                 </article>
 
@@ -459,10 +931,162 @@
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Представляем Google Antigravity</h3>
                         <p class="blog-card-meta">18 ноя 2025 • Продукт</p>
-                        <a href="#" class="blog-card-link t-link-small">Читать статью <span class="blog-arrow">›</span></a>
+                        <a href="#" class="blog-card-link t-link-small">Читать статью <span
+                                class="blog-arrow">›</span></a>
                     </div>
                 </article>
             </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         BLOCK 5: FAQ SECTION
+         ══════════════════════════════════════════ -->
+    <section class="glfw-section"
+        style="padding-top: 120px; padding-bottom: 120px; background-color: var(--glfw-bg, #050505);">
+        <div class="glfw-content-wrap" style="max-width: 800px; margin: 0 auto;">
+
+            <div style="text-align: center; margin-bottom: 64px;">
+                <h2 class="t-h2" style="font-weight: 500; font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px;">
+                    Частые вопросы</h2>
+                <p class="t-body" style="color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto;">
+                    Если вы не нашли ответ здесь, свяжитесь со мной для уточнения деталей.
+                </p>
+            </div>
+
+            <style>
+                .faq-details {
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 12px;
+                    margin-bottom: 16px;
+                    transition: background 0.2s, border 0.2s;
+                    overflow: hidden;
+                }
+
+                .faq-details:hover {
+                    background: rgba(255, 255, 255, 0.07);
+                    border-color: rgba(255, 255, 255, 0.1);
+                }
+
+                .faq-summary {
+                    padding: 24px 32px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    font-size: 18px;
+                    font-weight: 400;
+                    letter-spacing: -0.01em;
+                    list-style: none;
+                    /* Hide default arrow */
+                    color: rgba(255, 255, 255, 0.9);
+                }
+
+                .faq-summary::-webkit-details-marker {
+                    display: none;
+                }
+
+                .faq-icon {
+                    font-size: 24px;
+                    line-height: 1;
+                    font-weight: 400;
+                    color: rgba(255, 255, 255, 0.4);
+                    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s;
+                }
+
+                .faq-details[open] .faq-icon {
+                    transform: rotate(45deg);
+                    color: var(--glfw-accent-primary, #00f2ff);
+                }
+
+                .faq-content {
+                    padding: 0 32px 32px 32px;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 16px;
+                    line-height: 1.6;
+                    animation: faq-fade-in 0.3s ease-out;
+                }
+
+                @keyframes faq-fade-in {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
+
+            <div class="faq-list">
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span>"За что я плачу, если графику делает ИИ?"</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        Вы платите за стратегию, которая приносит вам прибыль. Нейросети не понимают болей вашей
+                        аудитории — с этим работаю я, направляя ИИ. Благодаря автоматизации вы получаете качество
+                        крутого агентства в 3 раза дешевле рынка.
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span>"Что, если мне не понравится результат?"</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        Именно поэтому мы не начинаем рисовать в первый день! На этапе диагностики мы фиксируем смыслы.
+                        Я показываю мудборды(доски настроения) и промежуточные варианты. Дизайн становится математически
+                        предсказуемым.
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span>"Кто пишет тексты для сайта?"</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        Я беру это на себя. На интервью собираю факты о вашем проекте, а затем пишу текст: без воды,
+                        штампов и абстракций. Ваши клиенты увидят только то, что закрывает их возражения.
+                    </div>
+                </details>
+
+                <details class="faq-details">
+                    <summary class="faq-summary">
+                        <span>"Делаете только дизайн или верстаете тоже?"</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-content">
+                        Лендинги и корпоративные сайты собираю под ключ на Tilda или верстаю полноценный сайт для вашего
+                        хостинга. Если продукт сложный (web-app) — передаю вашим разработчикам идеально
+                        структурированный макет.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- CTA Block -->
+            <div
+                style="margin-top: 64px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 64px; display: flex; flex-direction: column; align-items: center; gap: 32px;">
+                <p
+                    style="font-size: clamp(18px, 3vw, 24px); font-weight: 500; font-family: inherit; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.4;">
+                    <span style="display: inline-block; margin-bottom: 12px; font-size: 32px;">🔥</span><br />
+                    Готовы обсудить проект?<br />
+                    <span style="color: rgba(255,255,255,0.5);">Опишите задачу, и мы проведем диагностику.</span>
+                </p>
+                <a href="#" class="glfw-btn-filled"
+                    style="display: inline-flex; align-items: center; justify-content: center; height: 56px; padding: 0 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; border-radius: 99px; background-color: var(--glfw-accent-primary, #00f2ff); color: #000; text-decoration: none;">
+                    Написать Антону ✈️
+                </a>
+            </div>
+
         </div>
     </section>
 
