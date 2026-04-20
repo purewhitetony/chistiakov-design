@@ -112,7 +112,7 @@
 /* Breakpoint 1024px */
 @media (min-width: 1024px) {
     :root {
-        --font-h1: 4.500rem;
+        --font-h1: 3.500rem;
         --font-h2: 3.500rem;
         --font-h3: 2.500rem;
         --font-h4: 2.000rem;
@@ -123,7 +123,7 @@
 /* Breakpoint 1280px (Original Desktop Design) */
 @media (min-width: 1280px) {
     :root {
-        --font-h1: 5.000rem;
+        --font-h1: 4.000rem;
         --font-h2: 3.813rem;
         --font-h3: 2.938rem;
         --font-h4: 2.250rem;
@@ -138,10 +138,10 @@
 /* Breakpoint 1536px (Ultrawide) */
 @media (min-width: 1536px) {
     :root {
-        --font-h1: 5.500rem;
-        --font-h2: 4.250rem;
-        --font-h3: 3.250rem;
-        --font-h4: 2.500rem;
+        --font-h1: 4.500rem;
+        --font-h2: 3.250rem;
+        --font-h3: 2.750rem;
+        --font-h4: 2.000rem;
         --font-h5: 1.875rem;
         --font-lead: 1.438rem;
         --font-body: 1.125rem;
@@ -1077,8 +1077,7 @@ body {
 .hero-viewport {
     position: relative;
     width: 100%;
-    height: auto;
-    min-height: max(100svh, 700px);
+    height: 100svh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1098,6 +1097,7 @@ body {
     object-fit: cover;
     object-position: center top;
     display: block;
+    transform: scaleY(-1);
 }
 
 .hero-bg::after {
@@ -1122,8 +1122,9 @@ body {
     width: 100%;
     padding-left: var(--glfw--spacing--side);
     padding-right: var(--glfw--spacing--side);
-    padding-top: 40px;
-    padding-bottom: 120px; /* Создаем "подушку безопасности" для мышки скролла */
+    padding-top: 80px;
+    padding-bottom: 24px;
+    /* Вписываем контент ровно в высоту viewport */
 }
 
 .hero-foreground-inner {
@@ -1187,15 +1188,17 @@ body {
 }
 
 .hero-left {
-    max-width: 520px;
-    width: 100%; /* Добавляем, чтобы контейнер не схлопывался */
+    max-width: 100%;
+    width: calc(70% - 24px);
+    /* 50% ширины минус половина gap (48px) */
     flex-shrink: 0;
 }
 
 .hero-icon-row {
     display: flex;
     gap: 12px;
-    margin-top: 32px;
+    margin-top: 16px;
+    margin-bottom: 32px;
 }
 
 .hero-icon-circle {
@@ -1274,11 +1277,11 @@ body {
     align-items: flex-end;
     gap: 32px;
     flex-shrink: 0;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .hero-bottom-left {
-    max-width: 340px;
+    max-width: 540px;
 }
 
 .hero-bottom-left.glfw-glass::before {
@@ -1299,7 +1302,7 @@ body {
 /* Scroll indicator */
 .hero-scroll {
     position: absolute;
-    bottom: 56px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -1358,6 +1361,7 @@ body {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: flex-end;
+    overflow: visible;
 }
 
 /* ── Responsive ── */
@@ -1371,10 +1375,16 @@ body {
         max-width: 100%;
     }
 
+    .hero-left {
+        width: 100%;
+        /* Занимает всю ширину на 1024px, 768px и 640px */
+    }
+
     .hero-bottom {
         flex-direction: column;
         align-items: flex-start;
-        gap: 32px; /* Воздух между карточкой и тегами */
+        gap: 32px;
+        /* Воздух между карточкой и тегами */
     }
 
     .hero-tags {
@@ -1383,6 +1393,11 @@ body {
 }
 
 @media (max-width: 640px) {
+
+    .hero-viewport {
+        height: auto;
+        min-height: 100svh;
+    }
 
     .hero-nav-row {
         gap: 16px;
@@ -1475,6 +1490,71 @@ body {
         transform-origin: 100% 50%;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.about-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #070708;
+}
+
+@media (min-width: 1024px) {
+    .about-section {
+        min-height: 100svh;
+        padding-top: 80px;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 80px;
+        align-items: center;
+    }
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: var(--glfw-surface);
+    border: 1px solid var(--glfw-border-mid);
+}
+
+@media (min-width: 768px) {
+    .about-right {
+        padding: 48px;
+    }
+}
+
+.about-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
 
 /* Section wrapper */
 .brands-section {
@@ -1954,8 +2034,9 @@ body {
 }
 
 .hero-tags-container {
-    min-height: 51px;
+    min-height: 44px;
     height: auto;
+    overflow: visible;
 }
 
 .hero-tag-pill {
@@ -1986,6 +2067,7 @@ body {
     align-items: center;
     width: 100%;
     z-index: 10;
+    margin-top: 32px;
 }
 
 .reviews-header .glfw-title {
